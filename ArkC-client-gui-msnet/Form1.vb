@@ -85,6 +85,7 @@ Public Class Form1
             Dim serializedResult = serializer.Serialize(Configuration)
             fsTemp.Write(UTF8.GetBytes(serializedResult.ToCharArray()), 0, UTF8.GetByteCount(serializedResult.ToCharArray()))
             fsTemp.Close()
+            Debug.Print(sTempFileName)
             Process1.StartInfo.FileName = "cmd.exe"
             Process1.StartInfo.Arguments = " /C """"" & TextBox15.Text & """ " & TextBox13.Text & " -v -c """ & sTempFileName & """"
             If CheckBox1.Checked Then Process1.StartInfo.Arguments += " -pt"
@@ -106,9 +107,13 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        If Not (Process1.HasExited) Then
-            Process1.Kill()
-        End If
+        Try
+            If Not (Process1.HasExited) Then
+                Process1.Kill()
+            End If
+        Catch err As Exception
+
+        End Try
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -137,22 +142,34 @@ Public Class Form1
     End Sub
 
     Private Sub Process1_OutputDataReceived()
+        Try
+            Process1.CancelOutputRead()
+        Catch ex As Exception
 
+        End Try
         Process1.BeginOutputReadLine()
         Process1.WaitForExit()
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Process1.CancelOutputRead()
         If Not (Process1.HasExited) Then
             Process1.Kill()
         End If
     End Sub
 
-    Private Sub Process1_OutputDataReceived1(sender As Object, e As DataReceivedEventArgs) Handles Process1.OutputDataReceived
-        RichTextBox1.Text += e.Data + vbCrLf
-        If InStr(e.Data, "INFO") = 0 Then
-            RichTextBox2.Text += e.Data + vbCrLf
-        End If
-    End Sub
+    Private Sub Process1_OutputDataReceived_Process(sender As Object, e As DataReceivedEventArgs) Handles Process1.OutputDataReceived
+        Try
+            RichTextBox1.Text += e.Data + vbCrLf
+            RichTextBox1.SelectionStart = RichTextBox1.Text.Length
+            RichTextBox1.ScrollToCaret()
+            If InStr(e.Data, "INFO") = 0 And InStr(e.Data, "DEBUG") = 0 Then
+                RichTextBox2.Text += e.Data + vbCrLf
+                RichTextBox2.SelectionStart = RichTextBox2.Text.Length
+                RichTextBox1.ScrollToCaret()
+            End If
+        Catch ex As Exception
 
+        End Try
+    End Sub
 End Class
