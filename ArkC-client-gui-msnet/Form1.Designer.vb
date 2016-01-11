@@ -41,6 +41,8 @@ Partial Class Form1
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -67,9 +69,6 @@ Partial Class Form1
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.Process1 = New System.Diagnostics.Process()
-        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -139,9 +138,9 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(302, 166)
+        Me.Button3.Location = New System.Drawing.Point(301, 163)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(75, 28)
         Me.Button3.TabIndex = 12
         Me.Button3.Text = "Browse"
         Me.Button3.UseVisualStyleBackColor = True
@@ -150,7 +149,7 @@ Partial Class Form1
         '
         Me.Button2.Location = New System.Drawing.Point(302, 120)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(75, 26)
         Me.Button2.TabIndex = 11
         Me.Button2.Text = "Browse"
         Me.Button2.UseVisualStyleBackColor = True
@@ -159,7 +158,7 @@ Partial Class Form1
         '
         Me.Button1.Location = New System.Drawing.Point(302, 74)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(75, 27)
         Me.Button1.TabIndex = 10
         Me.Button1.Text = "Browse"
         Me.Button1.UseVisualStyleBackColor = True
@@ -253,10 +252,29 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 328)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(917, 128)
+        Me.GroupBox2.Size = New System.Drawing.Size(917, 218)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Output"
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(6, 42)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
+        Me.RichTextBox1.Size = New System.Drawing.Size(393, 170)
+        Me.RichTextBox1.TabIndex = 5
+        Me.RichTextBox1.Text = ""
+        '
+        'RichTextBox2
+        '
+        Me.RichTextBox2.ForeColor = System.Drawing.Color.Red
+        Me.RichTextBox2.Location = New System.Drawing.Point(408, 42)
+        Me.RichTextBox2.Name = "RichTextBox2"
+        Me.RichTextBox2.ReadOnly = True
+        Me.RichTextBox2.Size = New System.Drawing.Size(503, 170)
+        Me.RichTextBox2.TabIndex = 4
+        Me.RichTextBox2.Text = ""
         '
         'Label2
         '
@@ -304,9 +322,9 @@ Partial Class Form1
         '
         'Button10
         '
-        Me.Button10.Location = New System.Drawing.Point(341, 279)
+        Me.Button10.Location = New System.Drawing.Point(340, 273)
         Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(75, 23)
+        Me.Button10.Size = New System.Drawing.Size(75, 31)
         Me.Button10.TabIndex = 31
         Me.Button10.Text = "Browse"
         Me.Button10.UseVisualStyleBackColor = True
@@ -363,9 +381,9 @@ Partial Class Form1
         'Button4
         '
         Me.Button4.Enabled = False
-        Me.Button4.Location = New System.Drawing.Point(338, 150)
+        Me.Button4.Location = New System.Drawing.Point(338, 146)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.Size = New System.Drawing.Size(75, 27)
         Me.Button4.TabIndex = 17
         Me.Button4.Text = "Browse"
         Me.Button4.UseVisualStyleBackColor = True
@@ -392,9 +410,9 @@ Partial Class Form1
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Location = New System.Drawing.Point(6, 106)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(247, 21)
+        Me.CheckBox1.Size = New System.Drawing.Size(378, 21)
         Me.CheckBox1.TabIndex = 23
-        Me.CheckBox1.Text = "Use obfs4proxy with PTproxy script"
+        Me.CheckBox1.Text = "Use obfs4proxy with PTproxy script ( = Use obfs level 3)"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'TextBox11
@@ -498,42 +516,11 @@ Partial Class Form1
         Me.OpenFileDialog1.AddExtension = False
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'Process1
-        '
-        Me.Process1.StartInfo.Domain = ""
-        Me.Process1.StartInfo.LoadUserProfile = False
-        Me.Process1.StartInfo.Password = Nothing
-        Me.Process1.StartInfo.RedirectStandardOutput = True
-        Me.Process1.StartInfo.StandardErrorEncoding = Nothing
-        Me.Process1.StartInfo.StandardOutputEncoding = Nothing
-        Me.Process1.StartInfo.UserName = ""
-        Me.Process1.StartInfo.UseShellExecute = False
-        Me.Process1.SynchronizingObject = Me
-        '
-        'RichTextBox2
-        '
-        Me.RichTextBox2.ForeColor = System.Drawing.Color.Red
-        Me.RichTextBox2.Location = New System.Drawing.Point(408, 42)
-        Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.ReadOnly = True
-        Me.RichTextBox2.Size = New System.Drawing.Size(503, 80)
-        Me.RichTextBox2.TabIndex = 4
-        Me.RichTextBox2.Text = ""
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(6, 42)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(393, 80)
-        Me.RichTextBox1.TabIndex = 5
-        Me.RichTextBox1.Text = ""
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(938, 468)
+        Me.ClientSize = New System.Drawing.Size(938, 558)
         Me.Controls.Add(Me.Button9)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
@@ -598,7 +585,6 @@ Partial Class Form1
     Friend WithEvents Button10 As System.Windows.Forms.Button
     Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents Process1 As System.Diagnostics.Process
     Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
 

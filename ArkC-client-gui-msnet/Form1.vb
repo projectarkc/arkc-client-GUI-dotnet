@@ -2,8 +2,12 @@
 Imports System.IO
 Imports System.Text.Encoding
 Imports System.Threading
+Imports System.Management
 
 Public Class Form1
+
+    Dim Process1 As Process = Nothing
+
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked Then
             Button4.Enabled = True
@@ -18,7 +22,7 @@ Public Class Form1
         Dim result As DialogResult = OpenFileDialog1.ShowDialog()
         OpenFileDialog1.Title = "Executable of Server Public Key"
         If result = Windows.Forms.DialogResult.OK Then
-            TextBox4.Text = OpenfileDialog1.FileName
+            TextBox4.Text = OpenFileDialog1.FileName
         End If
     End Sub
 
@@ -26,7 +30,7 @@ Public Class Form1
         Dim result As DialogResult = OpenFileDialog1.ShowDialog()
         OpenFileDialog1.Title = "Executable of Client Private Key"
         If result = Windows.Forms.DialogResult.OK Then
-            TextBox5.Text = OpenfileDialog1.FileName
+            TextBox5.Text = OpenFileDialog1.FileName
         End If
     End Sub
 
@@ -34,7 +38,7 @@ Public Class Form1
         Dim result As DialogResult = OpenFileDialog1.ShowDialog()
         OpenFileDialog1.Title = "Executable of Client Public Key"
         If result = Windows.Forms.DialogResult.OK Then
-            TextBox6.Text = OpenfileDialog1.FileName
+            TextBox6.Text = OpenFileDialog1.FileName
         End If
     End Sub
 
@@ -42,13 +46,13 @@ Public Class Form1
         Dim result As DialogResult = OpenFileDialog1.ShowDialog()
         OpenFileDialog1.Title = "Executable of obfs4proxy"
         If result = Windows.Forms.DialogResult.OK Then
-            TextBox12.Text = OpenfileDialog1.FileName
+            TextBox12.Text = OpenFileDialog1.FileName
         End If
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         RichTextBox1.Text = ""
-        RichTextbox2.Text = ""
+        RichTextBox2.Text = ""
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
@@ -64,6 +68,10 @@ Public Class Form1
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Execute()
+    End Sub
+
+    Private Sub Execute()
         Dim Configuration As New config
         Dim serializer As New JavaScriptSerializer()
         Dim sTempFileName As String = System.IO.Path.GetTempFileName()
@@ -80,18 +88,25 @@ Public Class Form1
             Configuration.local_host = TextBox11.Text
             Configuration.obfs4_exec = TextBox12.Text
             Configuration.debug_ip = TextBox14.Text
+            If CheckBox1.Checked Then Configuration.obfs_level = 3 Else Configuration.obfs_level = 0
             Dim dns = serializer.Deserialize(Of List(Of List(Of Object)))(TextBox9.Text)
             Configuration.dns_servers = dns
             Dim serializedResult = serializer.Serialize(Configuration)
             fsTemp.Write(UTF8.GetBytes(serializedResult.ToCharArray()), 0, UTF8.GetByteCount(serializedResult.ToCharArray()))
             fsTemp.Close()
-            Debug.Print(sTempFileName)
-            Process1.StartInfo.FileName = "cmd.exe"
-            Process1.StartInfo.Arguments = " /C """"" & TextBox15.Text & """ " & TextBox13.Text & " -v -c """ & sTempFileName & """"
-            If CheckBox1.Checked Then Process1.StartInfo.Arguments += " -pt"
-            Process1.StartInfo.Arguments += " """
-            Process1.Start()
-            Dim runThread = New Thread(AddressOf Process1_OutputDataReceived)
+            If Process1 IsNot Nothing Then Process1.Dispose()
+            Process1 = New Process
+            AddHandler Process1.OutputDataReceived, AddressOf Process1_OutputDataReceived_Process
+            With Process1
+                .StartInfo.UseShellExecute = False
+                .StartInfo.RedirectStandardOutput = True
+                .StartInfo.CreateNoWindow = True
+                .StartInfo.FileName = TextBox15.Text
+                .StartInfo.Arguments = " " & TextBox13.Text & " -v -c """ & sTempFileName & """"
+
+                .Start()
+            End With
+            Dim runThread = New Thread(AddressOf Process1_starting)
             runThread.Start()
         Else
             MsgBox("Port must be valid integer 1~65535.", MsgBoxStyle.Exclamation, "Error")
@@ -108,11 +123,8 @@ Public Class Form1
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Try
-            If Not (Process1.HasExited) Then
-                Process1.Kill()
-            End If
-        Catch err As Exception
-
+            If Not (Process1.HasExited) Then killtree(Process1.Id)
+        Catch
         End Try
     End Sub
 
@@ -122,7 +134,7 @@ Public Class Form1
             OpenFileDialog1.Title = "Executable of ArkC Client"
             Dim result As DialogResult = OpenFileDialog1.ShowDialog()
             If result = Windows.Forms.DialogResult.OK Then
-                TextBox15.Text = OpenfileDialog1.FileName
+                TextBox15.Text = OpenFileDialog1.FileName
             End If
         End If
         ComboBox1.SelectedIndex = 4
@@ -137,11 +149,11 @@ Public Class Form1
         End If
     End Function
 
-    Private Sub Process1_Exited(sender As Object, e As EventArgs) Handles Process1.Exited
-        RichTextBox1.Text = RichTextBox1.Text + vbCrLf + "Execution Terminated" + vbCrLf
-    End Sub
+    'Private Sub Process1_Exited(sender As Object, e As EventArgs)
+    '    RichTextBox1.Text = RichTextBox1.Text + vbCrLf + "Execution Terminated" + vbCrLf
+    'End Sub
 
-    Private Sub Process1_OutputDataReceived()
+    Private Sub Process1_starting()
         Try
             Process1.CancelOutputRead()
         Catch ex As Exception
@@ -152,13 +164,25 @@ Public Class Form1
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        Process1.CancelOutputRead()
-        If Not (Process1.HasExited) Then
-            Process1.Kill()
+        Stop_exec()
+    End Sub
+
+    Private Sub Stop_exec()
+        If Process1 IsNot Nothing Then
+            Try
+                Process1.CancelOutputRead()
+                If Not (Process1.HasExited) Then
+                    killtree(Process1.Id)
+                End If
+            Catch
+            End Try
+            Process1.Dispose()
+            Process1 = Nothing
+            RichTextBox1.Text = RichTextBox1.Text + vbCrLf + "Execution Terminated" + vbCrLf
         End If
     End Sub
 
-    Private Sub Process1_OutputDataReceived_Process(sender As Object, e As DataReceivedEventArgs) Handles Process1.OutputDataReceived
+    Private Sub Process1_OutputDataReceived_Process(sender As Object, e As DataReceivedEventArgs)
         Try
             RichTextBox1.Text += e.Data + vbCrLf
             RichTextBox1.SelectionStart = RichTextBox1.Text.Length
@@ -171,5 +195,23 @@ Public Class Form1
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub killtree(myId As Integer)
+        Dim selectQuery As SelectQuery = New SelectQuery("Win32_Process")
+        Dim searcher As New ManagementObjectSearcher(selectQuery)
+        Dim aProcess As Process
+        Dim flag As Boolean = False
+        For Each proc As ManagementObject In searcher.Get
+            If proc("ParentProcessId") = myId Or proc("ProcessId") = myId Then
+                aProcess = System.Diagnostics.Process.GetProcessById(Int(proc("ProcessId")))
+                aProcess.Kill()
+            End If
+        Next
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Execute()
+        Stop_exec()
     End Sub
 End Class
