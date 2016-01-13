@@ -169,7 +169,7 @@ Partial Class Form1
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(198, 22)
         Me.TextBox7.TabIndex = 9
-        Me.TextBox7.Text = "8000"
+        Me.TextBox7.Text = "8080"
         '
         'Label7
         '
@@ -438,7 +438,7 @@ Partial Class Form1
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(235, 22)
         Me.TextBox10.TabIndex = 20
-        Me.TextBox10.Text = "0.0.0.0"
+        Me.TextBox10.Text = "<empty means :: or 0.0.0.0>"
         '
         'Label11
         '

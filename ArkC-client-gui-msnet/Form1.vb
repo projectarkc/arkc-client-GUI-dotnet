@@ -50,9 +50,13 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub Clean()
         RichTextBox1.Text = ""
         RichTextBox2.Text = ""
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Clean()
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
@@ -60,14 +64,15 @@ Public Class Form1
             tb.Text = ""
         Next
         TextBox9.Text = "[[""114.114.114.114"", 53], [""8.8.8.8"", 53]]]"
-        TextBox10.Text = "0.0.0.0"
+        TextBox10.Text = "<empty means :: or 0.0.0.0>"
         TextBox10.Text = "127.0.0.1"
-        TextBox7.Text = "8000"
+        TextBox7.Text = "8080"
         TextBox8.Text = "18001"
         CheckBox1.Checked = False
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Clean()
         Execute()
     End Sub
 
@@ -83,7 +88,8 @@ Public Class Form1
             Configuration.remote_cert = TextBox4.Text.Replace("\", "/")
             Configuration.remote_port = CInt(TextBox7.Text)
             Configuration.local_port = CInt(TextBox8.Text)
-            Configuration.local_port = CInt(ComboBox1.SelectedItem.ToString)
+            Configuration.number = CInt(ComboBox1.SelectedItem.ToString)
+            If TextBox10.Text = "<empty means :: or 0.0.0.0>" Then TextBox10.Text = ""
             Configuration.remote_host = TextBox10.Text
             Configuration.local_host = TextBox11.Text
             Configuration.obfs4_exec = TextBox12.Text
@@ -102,7 +108,7 @@ Public Class Form1
                 .StartInfo.RedirectStandardOutput = True
                 .StartInfo.CreateNoWindow = True
                 .StartInfo.FileName = TextBox15.Text
-                .StartInfo.Arguments = " " & TextBox13.Text & " -v -c """ & sTempFileName & """"
+                .StartInfo.Arguments = " -v -c """ & sTempFileName & """ " & TextBox13.Text
 
                 .Start()
             End With
@@ -211,7 +217,8 @@ Public Class Form1
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        Execute()
+        Clean()
         Stop_exec()
+        Execute()
     End Sub
 End Class
