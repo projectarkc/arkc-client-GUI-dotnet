@@ -7,6 +7,7 @@ Imports System.Management
 Public Class Form1
 
     Dim Process1 As Process = Nothing
+    Dim Process2 As Process = Nothing
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked Then
@@ -69,6 +70,7 @@ Public Class Form1
         TextBox7.Text = "8080"
         TextBox8.Text = "18001"
         CheckBox1.Checked = False
+        CheckBox2.Checked = False
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -109,7 +111,9 @@ Public Class Form1
                 .StartInfo.CreateNoWindow = True
                 .StartInfo.FileName = TextBox15.Text
                 .StartInfo.Arguments = " -v -c """ & sTempFileName & """ " & TextBox13.Text
-
+                If CheckBox2.Checked Then
+                    .StartInfo.Arguments = .StartInfo.Arguments & " -pn"
+                End If
                 .Start()
             End With
             Dim runThread = New Thread(AddressOf Process1_starting)
@@ -169,6 +173,16 @@ Public Class Form1
         Process1.WaitForExit()
     End Sub
 
+    Private Sub Process2_starting()
+        Try
+            Process2.CancelOutputRead()
+        Catch ex As Exception
+
+        End Try
+        Process2.BeginOutputReadLine()
+        Process2.WaitForExit()
+    End Sub
+
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Stop_exec()
     End Sub
@@ -193,7 +207,7 @@ Public Class Form1
             RichTextBox1.Text += e.Data + vbCrLf
             RichTextBox1.SelectionStart = RichTextBox1.Text.Length
             RichTextBox1.ScrollToCaret()
-            If InStr(e.Data, "INFO") = 0 And InStr(e.Data, "DEBUG") = 0 Then
+            If InStr(e.Data, "ERROR") <> 0 Or InStr(e.Data, "CRITICAL") <> 0 Or InStr(e.Data, "WARNING") <> 0 Then
                 RichTextBox2.Text += e.Data + vbCrLf
                 RichTextBox2.SelectionStart = RichTextBox2.Text.Length
                 RichTextBox1.ScrollToCaret()
@@ -220,5 +234,37 @@ Public Class Form1
         Clean()
         Stop_exec()
         Execute()
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        If Process2 IsNot Nothing Then Process2.Dispose()
+        Process2 = New Process
+        AddHandler Process2.OutputDataReceived, AddressOf Process1_OutputDataReceived_Process
+        With Process2
+            .StartInfo.UseShellExecute = False
+            .StartInfo.RedirectStandardOutput = True
+            .StartInfo.CreateNoWindow = True
+            .StartInfo.FileName = TextBox15.Text
+            .StartInfo.Arguments = " --get-meek"
+            .Start()
+        End With
+        Dim runThread = New Thread(AddressOf Process2_starting)
+        runThread.Start()
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        If Process2 IsNot Nothing Then Process2.Dispose()
+        Process2 = New Process
+        AddHandler Process2.OutputDataReceived, AddressOf Process1_OutputDataReceived_Process
+        With Process2
+            .StartInfo.UseShellExecute = False
+            .StartInfo.RedirectStandardOutput = True
+            .StartInfo.CreateNoWindow = True
+            .StartInfo.FileName = TextBox15.Text
+            .StartInfo.Arguments = " -kg"
+            .Start()
+        End With
+        Dim runThread = New Thread(AddressOf Process2_starting)
+        runThread.Start()
     End Sub
 End Class

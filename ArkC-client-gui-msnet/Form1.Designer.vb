@@ -69,6 +69,9 @@ Partial Class Form1
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -76,6 +79,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.CheckBox2)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.TextBox8)
@@ -468,7 +472,7 @@ Partial Class Form1
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(838, 27)
+        Me.Button5.Location = New System.Drawing.Point(835, 11)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(88, 30)
         Me.Button5.TabIndex = 2
@@ -477,7 +481,7 @@ Partial Class Form1
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(838, 71)
+        Me.Button6.Location = New System.Drawing.Point(835, 47)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(88, 30)
         Me.Button6.TabIndex = 3
@@ -486,7 +490,7 @@ Partial Class Form1
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(838, 115)
+        Me.Button7.Location = New System.Drawing.Point(835, 83)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(88, 30)
         Me.Button7.TabIndex = 4
@@ -495,7 +499,7 @@ Partial Class Form1
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(838, 189)
+        Me.Button8.Location = New System.Drawing.Point(835, 227)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(88, 48)
         Me.Button8.TabIndex = 5
@@ -504,7 +508,7 @@ Partial Class Form1
         '
         'Button9
         '
-        Me.Button9.Location = New System.Drawing.Point(838, 247)
+        Me.Button9.Location = New System.Drawing.Point(835, 285)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(88, 43)
         Me.Button9.TabIndex = 6
@@ -516,11 +520,41 @@ Partial Class Form1
         Me.OpenFileDialog1.AddExtension = False
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(15, 279)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(362, 21)
+        Me.CheckBox2.TabIndex = 17
+        Me.CheckBox2.Text = "Click to disable NAT traversal (E.g. not using routers)"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(835, 118)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(88, 47)
+        Me.Button11.TabIndex = 7
+        Me.Button11.Text = "Download MEEK"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(835, 171)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(88, 47)
+        Me.Button12.TabIndex = 8
+        Me.Button12.Text = "Generate Key"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(938, 558)
+        Me.Controls.Add(Me.Button12)
+        Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Button9)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
@@ -587,5 +621,8 @@ Partial Class Form1
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents Button11 As System.Windows.Forms.Button
+    Friend WithEvents Button12 As System.Windows.Forms.Button
 
 End Class
