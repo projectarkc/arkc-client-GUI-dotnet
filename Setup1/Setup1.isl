@@ -343,52 +343,7 @@
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>Component</td><td>{6D1843CE-77BD-4C69-B575-E49E6EC3D83F}</td><td>INSTALLDIR</td><td>2</td><td/><td>File</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{697DC4E9-F24D-4B69-A198-7E4C0914AD72}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{860EC01B-14CF-492E-B391-4D9E2B8FB05A}</td><td>REQUESTS</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>MSVCR100.dll</td><td>{9297BC2B-68D1-4745-96A6-999F47066B3B}</td><td>INSTALLDIR</td><td>2</td><td/><td>msvcr100.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>VCRUNTIME140.dll</td><td>{1FC6A60C-8131-4635-8DB9-5449560ACB66}</td><td>INSTALLDIR</td><td>2</td><td/><td>vcruntime140.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_console_l1_1_0.dll</td><td>{9BDCB07D-E0B2-452C-9802-A21481784396}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_console_l1_1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_datetime_l1_1_0.dll</td><td>{1D3B4449-BAE9-4C79-98D9-DA3F3E668411}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_datetime_l1_</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_debug_l1_1_0.dll</td><td>{D8F2646C-D329-4DED-975B-5217B77F33C5}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_debug_l1_1_0</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_errorhandling_l1_1_0.dll</td><td>{E5C4484F-BF1C-4CCA-BBDB-B310438E8A91}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_errorhandlin</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_file_l1_1_0.dll</td><td>{9514E5E5-FD0B-421A-B6AB-2B3399BB3AB9}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_file_l1_1_0.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_file_l1_2_0.dll</td><td>{7E322B26-D64C-4712-ACB0-B2988C92746C}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_file_l1_2_0.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_file_l2_1_0.dll</td><td>{6BD50783-68D8-4ACC-B5D5-69E758C04FDC}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_file_l2_1_0.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_handle_l1_1_0.dll</td><td>{2866AC86-95A2-4687-83EA-391BA39F5316}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_handle_l1_1_</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_heap_l1_1_0.dll</td><td>{4699E933-95B9-4A4F-B610-906E7CD4210A}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_heap_l1_1_0.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_interlocked_l1_1_0.dll</td><td>{B8DB5509-199E-4064-A970-70019962EC8B}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_interlocked_</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_libraryloader_l1_1_0.dll</td><td>{FE34AFF7-6C42-4F86-81A8-5116F27FECFA}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_libraryloade</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_localization_l1_2_0.dll</td><td>{3B525368-9120-4A51-BB7A-33DE9F1AF2E6}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_localization</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_memory_l1_1_0.dll</td><td>{72297EB8-5000-4DDD-81C2-6C62ABACA408}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_memory_l1_1_</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_namedpipe_l1_1_0.dll</td><td>{CD209F19-4B01-4106-947D-0A31DE4639BB}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_namedpipe_l1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_processenvironment_l1_1_0.dll</td><td>{B75A67BD-AD86-4374-A172-4EC6F01B092D}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_processenvir</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_processthreads_l1_1_0.dll</td><td>{816A4146-97EE-49B4-85AD-603E1D175DA0}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_processthrea</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_processthreads_l1_1_1.dll</td><td>{276B7871-E6EE-4190-98B0-44DF15225B14}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_processthrea1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_profile_l1_1_0.dll</td><td>{081D763F-A503-4D9E-8C5A-ECE1D7CD5125}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_profile_l1_1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_rtlsupport_l1_1_0.dll</td><td>{BFDC891F-7502-4665-9934-F6CE93BD8DB5}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_rtlsupport_l</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_string_l1_1_0.dll</td><td>{45DF5680-CEBB-4211-BB9D-8E69FAD471B4}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_string_l1_1_</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_synch_l1_1_0.dll</td><td>{5834A18B-8E47-4F40-B839-3A36BA172CE0}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_synch_l1_1_0</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_synch_l1_2_0.dll</td><td>{7447F6E7-F378-4F77-BB5B-EFECDEB117E0}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_synch_l1_2_0</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_sysinfo_l1_1_0.dll</td><td>{2BDD2656-9B47-4B6F-A9DD-5CC5E2DD237C}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_sysinfo_l1_1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_timezone_l1_1_0.dll</td><td>{F6602665-D6CE-4CC1-AEB3-3585663360A4}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_timezone_l1_</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_core_util_l1_1_0.dll</td><td>{57E99777-FFD5-4827-8638-90D6D4B214F3}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_core_util_l1_1_0.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_conio_l1_1_0.dll</td><td>{F4522E66-9DB1-4953-BAAA-679C7802B935}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_conio_l1_1_0.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_convert_l1_1_0.dll</td><td>{14CA781B-4F31-4D65-BACC-4451EF00F631}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_convert_l1_1_</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_environment_l1_1_0.dll</td><td>{514BCFD6-0283-4E87-B5DC-9A850F086B46}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_environment_l</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_filesystem_l1_1_0.dll</td><td>{69A3A2B1-C598-48FB-BAC8-CCC6FCD5739D}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_filesystem_l1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_heap_l1_1_0.dll</td><td>{A2EF7501-61FA-42A3-B355-F2F5F220E96D}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_heap_l1_1_0.d</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_locale_l1_1_0.dll</td><td>{3105D016-49C5-4443-8878-A8975340DC8D}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_locale_l1_1_0</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_math_l1_1_0.dll</td><td>{E980C8A7-B885-4751-8F62-CA03F66D87CB}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_math_l1_1_0.d</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_process_l1_1_0.dll</td><td>{35CE1C5E-C726-4F1B-9C8F-608F87CD908E}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_process_l1_1_</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_runtime_l1_1_0.dll</td><td>{2EDB9A18-8014-45D7-94B3-A16D3DF70A8F}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_runtime_l1_1_</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_stdio_l1_1_0.dll</td><td>{02F54069-0C79-4FD5-B3A7-7EA14035CF15}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_stdio_l1_1_0.</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_string_l1_1_0.dll</td><td>{351AF4F3-1EE9-4AB5-A60F-594B22637157}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_string_l1_1_0</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_time_l1_1_0.dll</td><td>{58C0B9CD-5A18-4286-B63A-5F4C9B7817A9}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_time_l1_1_0.d</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>api_ms_win_crt_utility_l1_1_0.dll</td><td>{3B063D85-1C01-49FC-A317-433107ABD4EC}</td><td>INSTALLDIR</td><td>2</td><td/><td>api_ms_win_crt_utility_l1_1_</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>libgcc_s_dw2_1.dll</td><td>{1F3F0D7D-4BF8-40A9-98EA-07373C1600FE}</td><td>INSTALLDIR</td><td>2</td><td/><td>libgcc_s_dw2_1.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>main.exe</td><td>{84236C79-A094-41FF-AB1E-8703B7F6B444}</td><td>INSTALLDIR</td><td>2</td><td/><td>main.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>python35.dll</td><td>{2E9B7578-2EB0-4C14-BD46-9B0EFFAB5057}</td><td>INSTALLDIR</td><td>2</td><td/><td>python35.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>pywintypes35.dll</td><td>{D202D7A5-FD3F-4B53-BF67-E26CC4FC18DA}</td><td>INSTALLDIR</td><td>2</td><td/><td>pywintypes35.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ucrtbase.dll</td><td>{652866FF-E824-40C8-BFD3-540239CC2308}</td><td>INSTALLDIR</td><td>2</td><td/><td>ucrtbase.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>arkc_client.exe</td><td>{B3CED2B8-1560-4AE2-ADDA-77DFFA9C6DC4}</td><td>INSTALLDIR</td><td>2</td><td/><td>arkc_client.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1207,7 +1162,6 @@
 		<row><td>ProgramFiles64Folder</td><td>TARGETDIR</td><td>.:Prog64~1|Program Files 64</td><td/><td>0</td><td/></row>
 		<row><td>ProgramFilesFolder</td><td>TARGETDIR</td><td>.:PROGRA~1|program files</td><td/><td>0</td><td/></row>
 		<row><td>ProgramMenuFolder</td><td>TARGETDIR</td><td>.:Programs</td><td/><td>3</td><td/></row>
-		<row><td>REQUESTS</td><td>INSTALLDIR</td><td>requests</td><td/><td>0</td><td/></row>
 		<row><td>RecentFolder</td><td>TARGETDIR</td><td>.:Recent</td><td/><td>0</td><td/></row>
 		<row><td>SendToFolder</td><td>TARGETDIR</td><td>.:SendTo</td><td/><td>3</td><td/></row>
 		<row><td>StartMenuFolder</td><td>TARGETDIR</td><td>.:STARTM~1|Start Menu</td><td/><td>3</td><td/></row>
@@ -1916,52 +1870,7 @@
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>Component</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
-		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
-		<row><td>AlwaysInstall</td><td>MSVCR100.dll</td></row>
-		<row><td>AlwaysInstall</td><td>VCRUNTIME140.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_console_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_datetime_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_debug_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_errorhandling_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_file_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_file_l1_2_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_file_l2_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_handle_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_heap_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_interlocked_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_libraryloader_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_localization_l1_2_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_memory_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_namedpipe_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_processenvironment_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_processthreads_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_processthreads_l1_1_1.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_profile_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_rtlsupport_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_string_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_synch_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_synch_l1_2_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_sysinfo_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_timezone_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_core_util_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_conio_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_convert_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_environment_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_filesystem_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_heap_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_locale_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_math_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_process_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_runtime_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_stdio_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_string_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_time_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>api_ms_win_crt_utility_l1_1_0.dll</td></row>
-		<row><td>AlwaysInstall</td><td>libgcc_s_dw2_1.dll</td></row>
-		<row><td>AlwaysInstall</td><td>main.exe</td></row>
-		<row><td>AlwaysInstall</td><td>python35.dll</td></row>
-		<row><td>AlwaysInstall</td><td>pywintypes35.dll</td></row>
-		<row><td>AlwaysInstall</td><td>ucrtbase.dll</td></row>
+		<row><td>AlwaysInstall</td><td>arkc_client.exe</td></row>
 	</table>
 
 	<table name="File">
@@ -1977,76 +1886,10 @@
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>File</td><td>Component</td><td>ArkC-client-gui-msnet.主输出</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ArkC-client-gui-msnet&gt;|Built</td><td>3</td><td/></row>
-		<row><td>_bz2.cp35_win32.pyd</td><td>ISX_DEFAULTCOMPONENT</td><td>_BZ2CP~1.PYD|_bz2.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\_bz2.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>_ctypes.cp35_win32.pyd</td><td>ISX_DEFAULTCOMPONENT</td><td>_CTYPE~1.PYD|_ctypes.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\_ctypes.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>_hashlib.cp35_win32.pyd</td><td>ISX_DEFAULTCOMPONENT</td><td>_HASHL~1.PYD|_hashlib.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\_hashlib.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>_lzma.cp35_win32.pyd</td><td>ISX_DEFAULTCOMPONENT</td><td>_LZMAC~1.PYD|_lzma.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\_lzma.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>_socket.cp35_win32.pyd</td><td>ISX_DEFAULTCOMPONENT</td><td>_SOCKE~1.PYD|_socket.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\_socket.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>_ssl.cp35_win32.pyd</td><td>ISX_DEFAULTCOMPONENT</td><td>_SSLCP~1.PYD|_ssl.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\_ssl.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_console_l1_1</td><td>api_ms_win_core_console_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-console-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-console-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_datetime_l1_</td><td>api_ms_win_core_datetime_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-datetime-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-datetime-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_debug_l1_1_0</td><td>api_ms_win_core_debug_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-debug-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-debug-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_errorhandlin</td><td>api_ms_win_core_errorhandling_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-errorhandling-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-errorhandling-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_file_l1_1_0.</td><td>api_ms_win_core_file_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-file-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-file-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_file_l1_2_0.</td><td>api_ms_win_core_file_l1_2_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-file-l1-2-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-file-l1-2-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_file_l2_1_0.</td><td>api_ms_win_core_file_l2_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-file-l2-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-file-l2-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_handle_l1_1_</td><td>api_ms_win_core_handle_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-handle-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-handle-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_heap_l1_1_0.</td><td>api_ms_win_core_heap_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-heap-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-heap-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_interlocked_</td><td>api_ms_win_core_interlocked_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-interlocked-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-interlocked-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_libraryloade</td><td>api_ms_win_core_libraryloader_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-libraryloader-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-libraryloader-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_localization</td><td>api_ms_win_core_localization_l1_2_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-localization-l1-2-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-localization-l1-2-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_memory_l1_1_</td><td>api_ms_win_core_memory_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-memory-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-memory-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_namedpipe_l1</td><td>api_ms_win_core_namedpipe_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-namedpipe-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-namedpipe-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_processenvir</td><td>api_ms_win_core_processenvironment_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-processenvironment-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-processenvironment-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_processthrea</td><td>api_ms_win_core_processthreads_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-processthreads-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-processthreads-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_processthrea1</td><td>api_ms_win_core_processthreads_l1_1_1.dll</td><td>API-MS~1.DLL|api-ms-win-core-processthreads-l1-1-1.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-processthreads-l1-1-1.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_profile_l1_1</td><td>api_ms_win_core_profile_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-profile-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-profile-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_rtlsupport_l</td><td>api_ms_win_core_rtlsupport_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-rtlsupport-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-rtlsupport-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_string_l1_1_</td><td>api_ms_win_core_string_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-string-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-string-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_synch_l1_1_0</td><td>api_ms_win_core_synch_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-synch-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-synch-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_synch_l1_2_0</td><td>api_ms_win_core_synch_l1_2_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-synch-l1-2-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-synch-l1-2-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_sysinfo_l1_1</td><td>api_ms_win_core_sysinfo_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-sysinfo-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-sysinfo-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_timezone_l1_</td><td>api_ms_win_core_timezone_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-timezone-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-timezone-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_core_util_l1_1_0.</td><td>api_ms_win_core_util_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-core-util-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-core-util-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_conio_l1_1_0.</td><td>api_ms_win_crt_conio_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-conio-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-conio-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_convert_l1_1_</td><td>api_ms_win_crt_convert_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-convert-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-convert-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_environment_l</td><td>api_ms_win_crt_environment_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-environment-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-environment-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_filesystem_l1</td><td>api_ms_win_crt_filesystem_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-filesystem-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-filesystem-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_heap_l1_1_0.d</td><td>api_ms_win_crt_heap_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-heap-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-heap-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_locale_l1_1_0</td><td>api_ms_win_crt_locale_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-locale-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-locale-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_math_l1_1_0.d</td><td>api_ms_win_crt_math_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-math-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-math-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_process_l1_1_</td><td>api_ms_win_crt_process_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-process-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-process-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_runtime_l1_1_</td><td>api_ms_win_crt_runtime_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-runtime-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-runtime-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_stdio_l1_1_0.</td><td>api_ms_win_crt_stdio_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-stdio-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-stdio-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_string_l1_1_0</td><td>api_ms_win_crt_string_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-string-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-string-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_time_l1_1_0.d</td><td>api_ms_win_crt_time_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-time-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-time-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>api_ms_win_crt_utility_l1_1_</td><td>api_ms_win_crt_utility_l1_1_0.dll</td><td>API-MS~1.DLL|api-ms-win-crt-utility-l1-1-0.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\api-ms-win-crt-utility-l1-1-0.dll</td><td>1</td><td/></row>
-		<row><td>base_library.zip</td><td>ISX_DEFAULTCOMPONENT</td><td>BASE_L~1.ZIP|base_library.zip</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\base_library.zip</td><td>1</td><td/></row>
-		<row><td>cacert.pem</td><td>ISX_DEFAULTCOMPONENT1</td><td>cacert.pem</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\requests\cacert.pem</td><td>1</td><td/></row>
-		<row><td>crypto.cipher._aes.cp35_win3</td><td>ISX_DEFAULTCOMPONENT</td><td>CRYPTO~1.PYD|Crypto.Cipher._AES.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\Crypto.Cipher._AES.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>crypto.cipher._des.cp35_win3</td><td>ISX_DEFAULTCOMPONENT</td><td>CRYPTO~1.PYD|Crypto.Cipher._DES.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\Crypto.Cipher._DES.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>crypto.cipher._des3.cp35_win</td><td>ISX_DEFAULTCOMPONENT</td><td>CRYPTO~1.PYD|Crypto.Cipher._DES3.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\Crypto.Cipher._DES3.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>crypto.hash._sha256.cp35_win</td><td>ISX_DEFAULTCOMPONENT</td><td>CRYPTO~1.PYD|Crypto.Hash._SHA256.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\Crypto.Hash._SHA256.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>crypto.random.osrng.winrando</td><td>ISX_DEFAULTCOMPONENT</td><td>CRYPTO~1.PYD|Crypto.Random.OSRNG.winrandom.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\Crypto.Random.OSRNG.winrandom.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>crypto.util._counter.cp35_wi</td><td>ISX_DEFAULTCOMPONENT</td><td>CRYPTO~1.PYD|Crypto.Util._counter.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\Crypto.Util._counter.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>crypto.util.strxor.cp35_win3</td><td>ISX_DEFAULTCOMPONENT</td><td>CRYPTO~1.PYD|Crypto.Util.strxor.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\Crypto.Util.strxor.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>libgcc_s_dw2_1.dll</td><td>libgcc_s_dw2_1.dll</td><td>LIBGCC~1.DLL|libgcc_s_dw2-1.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\libgcc_s_dw2-1.dll</td><td>1</td><td/></row>
-		<row><td>license</td><td>ISX_DEFAULTCOMPONENT</td><td>LICENSE</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\LICENSE</td><td>1</td><td/></row>
-		<row><td>main.exe</td><td>main.exe</td><td>main.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\main.exe</td><td>1</td><td/></row>
-		<row><td>main.exe.manifest</td><td>ISX_DEFAULTCOMPONENT</td><td>MAINEX~1.MAN|main.exe.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\main.exe.manifest</td><td>1</td><td/></row>
-		<row><td>miniupnpc.cp35_win32.pyd</td><td>ISX_DEFAULTCOMPONENT</td><td>MINIUP~1.PYD|miniupnpc.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\miniupnpc.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>msvcr100.dll</td><td>MSVCR100.dll</td><td>MSVCR100.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\MSVCR100.dll</td><td>1</td><td/></row>
-		<row><td>pyexpat.cp35_win32.pyd</td><td>ISX_DEFAULTCOMPONENT</td><td>PYEXPA~1.PYD|pyexpat.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\pyexpat.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>python35.dll</td><td>python35.dll</td><td>python35.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\python35.dll</td><td>1</td><td/></row>
-		<row><td>pywintypes35.dll</td><td>pywintypes35.dll</td><td>PYWINT~1.DLL|pywintypes35.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\pywintypes35.dll</td><td>1</td><td/></row>
-		<row><td>readme.rst</td><td>ISX_DEFAULTCOMPONENT</td><td>README.rst</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\README.rst</td><td>1</td><td/></row>
-		<row><td>select.cp35_win32.pyd</td><td>ISX_DEFAULTCOMPONENT</td><td>SELECT~1.PYD|select.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\select.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>ucrtbase.dll</td><td>ucrtbase.dll</td><td>ucrtbase.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\ucrtbase.dll</td><td>1</td><td/></row>
-		<row><td>unicodedata.cp35_win32.pyd</td><td>ISX_DEFAULTCOMPONENT</td><td>UNICOD~1.PYD|unicodedata.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\unicodedata.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>vcruntime140.dll</td><td>VCRUNTIME140.dll</td><td>VCRUNT~1.DLL|VCRUNTIME140.dll</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\VCRUNTIME140.dll</td><td>1</td><td/></row>
-		<row><td>version</td><td>ISX_DEFAULTCOMPONENT</td><td>VERSION</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\VERSION</td><td>1</td><td/></row>
-		<row><td>win32api.cp35_win32.pyd</td><td>ISX_DEFAULTCOMPONENT</td><td>WIN32A~1.PYD|win32api.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\win32api.cp35-win32.pyd</td><td>1</td><td/></row>
-		<row><td>win32wnet.cp35_win32.pyd</td><td>ISX_DEFAULTCOMPONENT</td><td>WIN32W~1.PYD|win32wnet.cp35-win32.pyd</td><td>0</td><td/><td/><td/><td>1</td><td>D:\temp\arkc-client\arkcclient\dist\main\win32wnet.cp35-win32.pyd</td><td>1</td><td/></row>
+		<row><td>arkc_client.exe</td><td>arkc_client.exe</td><td>ARKC-C~1.EXE|arkc-client.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\arkcclient\dist\arkc-client.exe</td><td>1</td><td/></row>
+		<row><td>license</td><td>ISX_DEFAULTCOMPONENT</td><td>LICENSE</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\LICENSE</td><td>1</td><td/></row>
+		<row><td>readme.rst</td><td>ISX_DEFAULTCOMPONENT</td><td>README.rst</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\README.rst</td><td>1</td><td/></row>
+		<row><td>version</td><td>ISX_DEFAULTCOMPONENT</td><td>VERSION</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\VERSION</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2192,52 +2035,7 @@
 		<col def="S0">Miscellaneous</col>
 		<row><td>Component</td><td/><td/><td>_4F517195_002D_4BCD_AFEF_8721AB2355D8_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_FC486BDE_F5FA_4B25_9563_613B37D07187_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_1B7551D7_2EE8_4B99_B84E_E3C0545168D9_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>MSVCR100.dll</td><td/><td/><td>_73599421_720E_46AE_B10D_EA3645204435_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>VCRUNTIME140.dll</td><td/><td/><td>_31B4F61A_BAE8_456D_9721_F67870346027_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_console_l1_1_0.dll</td><td/><td/><td>_08142A39_0000_4FE0_B762_ED420D21E4E4_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_datetime_l1_1_0.dll</td><td/><td/><td>_94D84183_D1D1_4B4D_BA0B_3DCBF59772F5_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_debug_l1_1_0.dll</td><td/><td/><td>_895CD7D5_6EEC_4904_9AF4_C6278CED1BA4_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_errorhandling_l1_1_0.dll</td><td/><td/><td>_3A8C1FCE_F331_4C5D_A511_AA6F7C548976_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_file_l1_1_0.dll</td><td/><td/><td>_13B03CE7_0CE0_4D1C_9EC7_24E03ED6C8E5_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_file_l1_2_0.dll</td><td/><td/><td>_434FF16E_E6E1_4B10_92A8_65D0E6A92099_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_file_l2_1_0.dll</td><td/><td/><td>_BF8F59A7_B9F8_4480_A7C8_64A15C21E13C_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_handle_l1_1_0.dll</td><td/><td/><td>_38C72157_263A_448A_9298_92CAA898B581_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_heap_l1_1_0.dll</td><td/><td/><td>_78D270C3_33F9_4AEC_9987_EB2014F988D4_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_interlocked_l1_1_0.dll</td><td/><td/><td>_938A8097_7300_4AE5_B161_49CC83C1BAFE_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_libraryloader_l1_1_0.dll</td><td/><td/><td>_49746FCB_713D_4200_A905_C818F02E1541_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_localization_l1_2_0.dll</td><td/><td/><td>_E5986301_37CD_4E5B_8346_9B385CFC8988_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_memory_l1_1_0.dll</td><td/><td/><td>_2460676E_44B0_4B01_908C_5AF4E8072EC0_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_namedpipe_l1_1_0.dll</td><td/><td/><td>_F05BABEF_78B3_4E0F_A497_17289EFCA2ED_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_processenvironment_l1_1_0.dll</td><td/><td/><td>_7BD8F34D_7813_4B4F_88CC_A692E79CA04D_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_processthreads_l1_1_0.dll</td><td/><td/><td>_566CE800_934E_42AA_99B8_726AD137662F_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_processthreads_l1_1_1.dll</td><td/><td/><td>_C78D7047_ABFD_4A26_A4EE_2FDA8A23AC08_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_profile_l1_1_0.dll</td><td/><td/><td>_DDAAA3E4_470D_4FCD_825A_38C4D03BB8E7_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_rtlsupport_l1_1_0.dll</td><td/><td/><td>_1ADBFD1E_6C13_457C_B70F_4A4DA6D164FB_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_string_l1_1_0.dll</td><td/><td/><td>_ADF67D81_7642_4AAE_8A12_85AF2D73B552_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_synch_l1_1_0.dll</td><td/><td/><td>_48EE19A0_3D08_46E7_A1DA_3F124A86E38D_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_synch_l1_2_0.dll</td><td/><td/><td>_360D01CB_FD41_464F_A7DC_A7B31CBF76D0_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_sysinfo_l1_1_0.dll</td><td/><td/><td>_E6A50089_C2FE_404F_BBEE_E6C923B7346C_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_timezone_l1_1_0.dll</td><td/><td/><td>_E1798AC3_80E9_4F9B_A120_315AED1B0958_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_core_util_l1_1_0.dll</td><td/><td/><td>_131184B2_5397_49E8_80EE_C7DF8ED3B172_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_conio_l1_1_0.dll</td><td/><td/><td>_73F6502A_1BA7_420A_83B3_B353E63FD3D2_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_convert_l1_1_0.dll</td><td/><td/><td>_AF72C46E_0565_4BFC_B233_42C2F1F9B48E_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_environment_l1_1_0.dll</td><td/><td/><td>_DB9B57A3_B986_46E5_8F6B_EF512E1A948C_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_filesystem_l1_1_0.dll</td><td/><td/><td>_6E5CF76D_3B5D_480D_B8D4_601915459AEB_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_heap_l1_1_0.dll</td><td/><td/><td>_B03B30D6_1E37_4851_B1DD_63F7869D6344_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_locale_l1_1_0.dll</td><td/><td/><td>_D3944017_DA03_4AEA_911A_CB2D702C5EAE_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_math_l1_1_0.dll</td><td/><td/><td>_52689904_6BED_4004_993B_632A62263EC2_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_process_l1_1_0.dll</td><td/><td/><td>_317A9187_F283_4BAE_9030_41F0264BA6C8_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_runtime_l1_1_0.dll</td><td/><td/><td>_622A6728_C135_42A2_AB9D_42312EAD7F94_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_stdio_l1_1_0.dll</td><td/><td/><td>_E8546865_8719_4D2A_9DB0_D1D74E32BFF3_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_string_l1_1_0.dll</td><td/><td/><td>_F12D0498_A78B_4E72_971E_BA41296959D0_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_time_l1_1_0.dll</td><td/><td/><td>_A34748E6_A7D1_4445_83C3_B27EA6941F09_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>api_ms_win_crt_utility_l1_1_0.dll</td><td/><td/><td>_E283E3EE_455E_43E4_AE93_A24A3275F862_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>libgcc_s_dw2_1.dll</td><td/><td/><td>_9D1A3E16_3CE5_4CFB_9160_A13F372A0012_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>main.exe</td><td/><td/><td>_A9484DC1_0204_4860_9DE4_641A1138107E_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>python35.dll</td><td/><td/><td>_3188D6B2_902B_42E8_ADE3_9002B6BDA27D_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>pywintypes35.dll</td><td/><td/><td>_A8017DF0_F870_4DCD_9EF3_62E1578BE8E6_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ucrtbase.dll</td><td/><td/><td>_A4FF1ED3_2381_458F_98B0_1BA16CFC7FAE_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>arkc_client.exe</td><td/><td/><td>_21617635_0E42_493D_B2AD_214E8461AF45_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -4186,8 +3984,8 @@
 		<col def="S0">Value</col>
 		<row><td>ActiveLanguage</td><td>1033</td></row>
 		<row><td>Comments</td><td/></row>
-		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="6d78a46bf2c52ee27034bbcad20f7f95">
-QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
+		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="de9f554a3bc05c12be9c31b998217995">
+UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 			</td></row>
 		<row><td>DefaultProductConfiguration</td><td>Express</td></row>
 		<row><td>EnableSwidtag</td><td>1</td></row>
@@ -4204,7 +4002,7 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{B9E0714A-34F3-45FF-97E1-44ED0F48E29C}</td></row>
 		<row><td>ISUSSignature</td><td>{BC070115-0E92-47E0-9EA0-F626343E7AD3}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewRealSetupDesign,viewSetupDesign,viewFileExtensions,viewXMLConfig,viewIniFiles,viewISToday,viewAppV,viewProject,viewSetupTypes,viewUpgradePaths,viewUpdateService,viewAppFiles,viewFeatureFiles,viewObjects,viewShortcuts,viewRegistry,viewTextFiles,viewEnvironmentVariables,viewVRoots,viewServices,viewUI,viewBillboards,viewTextMessages,viewSystemSearch,viewInstallScriptStd,viewCustomActions,viewRelease</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewRealSetupDesign,viewSetupDesign,viewFileExtensions,viewXMLConfig,viewIniFiles,viewISToday,viewAppV,viewProject,viewSetupTypes,viewUpgradePaths,viewUpdateService,viewAppFiles,viewFeatureFiles,viewObjects,viewShortcuts,viewRegistry,viewTextFiles,viewEnvironmentVariables,viewVRoots,viewServices,viewUI,viewBillboards,viewTextMessages,viewSystemSearch,viewInstallScriptStd,viewCustomActions,viewRelease,viewDependencies</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
@@ -4664,8 +4462,6 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>FileKey1</td><td>main.exe</td><td/><td>arkcte_1_arkc_technology_inc.</td><td>2</td></row>
-		<row><td>FileKey2</td><td>main.exe</td><td/><td>arkccl_1_arkc_client</td><td>2</td></row>
 		<row><td>_Built</td><td>Component</td><td/><td>arkccl_1_arkc_client</td><td>2</td></row>
 	</table>
 
