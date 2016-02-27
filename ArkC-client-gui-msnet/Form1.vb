@@ -6,50 +6,11 @@ Imports System.Management
 
 Public Class Form1
 
+    Private Property exec_path As String
+    Private Property argv As String
+
     Dim Process1 As Process = Nothing
     Dim Process2 As Process = Nothing
-
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If CheckBox1.Checked Then
-            Button4.Enabled = True
-            TextBox12.Enabled = True
-        Else
-            Button4.Enabled = False
-            TextBox12.Enabled = False
-        End If
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim result As DialogResult = OpenFileDialog1.ShowDialog()
-        OpenFileDialog1.Title = "Executable of Server Public Key"
-        If result = Windows.Forms.DialogResult.OK Then
-            TextBox4.Text = OpenFileDialog1.FileName
-        End If
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim result As DialogResult = OpenFileDialog1.ShowDialog()
-        OpenFileDialog1.Title = "Executable of Client Private Key"
-        If result = Windows.Forms.DialogResult.OK Then
-            TextBox5.Text = OpenFileDialog1.FileName
-        End If
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Dim result As DialogResult = OpenFileDialog1.ShowDialog()
-        OpenFileDialog1.Title = "Executable of Client Public Key"
-        If result = Windows.Forms.DialogResult.OK Then
-            TextBox6.Text = OpenFileDialog1.FileName
-        End If
-    End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Dim result As DialogResult = OpenFileDialog1.ShowDialog()
-        OpenFileDialog1.Title = "Executable of obfs4proxy"
-        If result = Windows.Forms.DialogResult.OK Then
-            TextBox12.Text = OpenFileDialog1.FileName
-        End If
-    End Sub
 
     Private Sub Clean()
         RichTextBox1.Text = ""
@@ -60,75 +21,27 @@ Public Class Form1
         Clean()
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        For Each tb As TextBox In Me.Controls
-            tb.Text = ""
-        Next
-        TextBox9.Text = "[[""114.114.114.114"", 53], [""8.8.8.8"", 53]]]"
-        TextBox10.Text = "<empty means :: or 0.0.0.0>"
-        TextBox10.Text = "127.0.0.1"
-        TextBox7.Text = "8080"
-        TextBox8.Text = "18001"
-        CheckBox1.Checked = False
-        CheckBox2.Checked = False
-    End Sub
-
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Clean()
         Execute()
     End Sub
 
     Private Sub Execute()
-        Dim Configuration As New config
-        Dim serializer As New JavaScriptSerializer()
-        Dim sTempFileName As String = System.IO.Path.GetTempFileName()
-        Dim fsTemp As New System.IO.FileStream(sTempFileName, IO.FileMode.Create)
-        If IsValidPort(TextBox7.Text) And IsValidPort(TextBox8.Text) Then
-            Configuration.control_domain = TextBox3.Text
-            Configuration.local_cert = TextBox6.Text.Replace("\", "/")
-            Configuration.local_cert_pub = TextBox5.Text.Replace("\", "/")
-            Configuration.remote_cert = TextBox4.Text.Replace("\", "/")
-            Configuration.remote_port = CInt(TextBox7.Text)
-            Configuration.local_port = CInt(TextBox8.Text)
-            Configuration.number = CInt(ComboBox1.SelectedItem.ToString)
-            If TextBox10.Text = "<empty means :: or 0.0.0.0>" Then TextBox10.Text = ""
-            Configuration.remote_host = TextBox10.Text
-            Configuration.local_host = TextBox11.Text
-            Configuration.obfs4_exec = TextBox12.Text
-            Configuration.debug_ip = TextBox14.Text
-            If CheckBox1.Checked Then Configuration.obfs_level = 3 Else Configuration.obfs_level = 0
-            Dim dns = serializer.Deserialize(Of List(Of List(Of Object)))(TextBox9.Text)
-            Configuration.dns_servers = dns
-            Dim serializedResult = serializer.Serialize(Configuration)
-            fsTemp.Write(UTF8.GetBytes(serializedResult.ToCharArray()), 0, UTF8.GetByteCount(serializedResult.ToCharArray()))
-            fsTemp.Close()
-            If Process1 IsNot Nothing Then Process1.Dispose()
-            Process1 = New Process
-            AddHandler Process1.OutputDataReceived, AddressOf Process1_OutputDataReceived_Process
-            With Process1
-                .StartInfo.UseShellExecute = False
-                .StartInfo.RedirectStandardOutput = True
-                .StartInfo.CreateNoWindow = True
-                .StartInfo.FileName = TextBox15.Text
-                .StartInfo.Arguments = " -v -c """ & sTempFileName & """ " & TextBox13.Text
-                If CheckBox2.Checked Then
-                    .StartInfo.Arguments = .StartInfo.Arguments & " -pn"
-                End If
-                .Start()
-            End With
-            Dim runThread = New Thread(AddressOf Process1_starting)
-            runThread.Start()
-        Else
-            MsgBox("Port must be valid integer 1~65535.", MsgBoxStyle.Exclamation, "Error")
-        End If
-    End Sub
-
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        Dim result As DialogResult = OpenFileDialog1.ShowDialog()
-        OpenFileDialog1.Title = "Executable of ArkC Client"
-        If result = Windows.Forms.DialogResult.OK Then
-            TextBox15.Text = OpenFileDialog1.FileName
-        End If
+        If Process1 IsNot Nothing Then Process1.Dispose()
+        Process1 = New Process
+        AddHandler Process1.OutputDataReceived, AddressOf Process1_OutputDataReceived_Process
+        With Process1
+            .StartInfo.UseShellExecute = False
+            .StartInfo.RedirectStandardOutput = True
+            .StartInfo.CreateNoWindow = True
+            .StartInfo.FileName = Me.exec_path
+            .StartInfo.Arguments = " -v -c """ & Application.LocalUserAppDataPath + "\client.json" & """ " & Me.argv
+            .Start()
+            ToolStripStatusLabel1.Text = Me.exec_path + Me.argv
+            ToolStripStatusLabel2.Text = "Running"
+        End With
+        Dim runThread = New Thread(AddressOf Process1_starting)
+        runThread.Start()
     End Sub
 
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -138,30 +51,29 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        If Not (System.IO.File.Exists(Application.StartupPath & "/arkc-client.exe")) Then
-            MsgBox("ArkC client executable not found in default directory. Please set manually.", MsgBoxStyle.Information, "Loading Executable")
-            OpenFileDialog1.Title = "Executable of ArkC Client"
-            Dim result As DialogResult = OpenFileDialog1.ShowDialog()
-            If result = Windows.Forms.DialogResult.OK Then
-                TextBox15.Text = OpenFileDialog1.FileName
-            End If
-        End If
-        ComboBox1.SelectedIndex = 4
-        Form1.CheckForIllegalCrossThreadCalls = False
+    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Check_config()
     End Sub
 
-    Private Function IsValidPort(input As String) As Boolean
-        If IsNumeric(input) And CInt(input) <= 65535 And CInt(input) >= 1 Then
-            Return True
+    Private Sub Check_config()
+        If System.IO.File.Exists(Application.LocalUserAppDataPath + "\client.json") Then
+            Load_config()
         Else
-            Return False
+            Form2.ShowDialog()
         End If
-    End Function
+    End Sub
 
-    'Private Sub Process1_Exited(sender As Object, e As EventArgs)
-    '    RichTextBox1.Text = RichTextBox1.Text + vbCrLf + "Execution Terminated" + vbCrLf
-    'End Sub
+    Public Sub Load_config()
+        Dim serializer As New JavaScriptSerializer()
+        Dim fsTemp As New System.IO.StreamReader(Application.LocalUserAppDataPath + "\client.json", IO.FileMode.Open)
+        Dim cfg As config
+        Dim contents As String
+        contents = fsTemp.ReadToEnd()
+        fsTemp.Close()
+        cfg = serializer.Deserialize(Of config)(contents)
+        Me.exec_path = cfg.executable
+        Me.argv = " -v -c """ & Application.LocalUserAppDataPath & "\client.json" & """ " & cfg.argv
+    End Sub
 
     Private Sub Process1_starting()
         Try
@@ -199,6 +111,8 @@ Public Class Form1
             Process1.Dispose()
             Process1 = Nothing
             RichTextBox1.Text = RichTextBox1.Text + vbCrLf + "Execution Terminated" + vbCrLf
+            ToolStripStatusLabel1.Text = "Using executable: " + Me.exec_path
+            ToolStripStatusLabel2.Text = "Not running"
         End If
     End Sub
 
@@ -230,12 +144,8 @@ Public Class Form1
         Next
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        Clean()
-        Stop_exec()
-        Execute()
-    End Sub
 
+    'TODO: Capture end of execution
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         If Process2 IsNot Nothing Then Process2.Dispose()
         Process2 = New Process
@@ -244,9 +154,11 @@ Public Class Form1
             .StartInfo.UseShellExecute = False
             .StartInfo.RedirectStandardOutput = True
             .StartInfo.CreateNoWindow = True
-            .StartInfo.FileName = TextBox15.Text
+            .StartInfo.FileName = Me.exec_path
             .StartInfo.Arguments = " --get-meek"
             .Start()
+            ToolStripStatusLabel1.Text = Me.exec_path + .StartInfo.Arguments
+            ToolStripStatusLabel2.Text = "Running"
         End With
         Dim runThread = New Thread(AddressOf Process2_starting)
         runThread.Start()
@@ -260,11 +172,17 @@ Public Class Form1
             .StartInfo.UseShellExecute = False
             .StartInfo.RedirectStandardOutput = True
             .StartInfo.CreateNoWindow = True
-            .StartInfo.FileName = TextBox15.Text
+            .StartInfo.FileName = Me.exec_path
             .StartInfo.Arguments = " -kg"
             .Start()
+            ToolStripStatusLabel1.Text = Me.exec_path + .StartInfo.Arguments
+            ToolStripStatusLabel2.Text = "Running"
         End With
         Dim runThread = New Thread(AddressOf Process2_starting)
         runThread.Start()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Form2.ShowDialog()
     End Sub
 End Class

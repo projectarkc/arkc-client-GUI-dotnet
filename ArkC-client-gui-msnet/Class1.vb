@@ -12,5 +12,7 @@
     Public Property obfs_level As Byte
     Public Property debug_ip As String
     Public Property dns_servers As List(Of List(Of Object))
+    Public Property executable As String
+    Public Property argv As String
 End Class
 
