@@ -120,6 +120,7 @@ Partial Class Form1
         '
         'StatusStrip1
         '
+        Me.StatusStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.765218!)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 263)
         Me.StatusStrip1.Name = "StatusStrip1"

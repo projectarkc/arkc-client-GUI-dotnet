@@ -124,18 +124,18 @@ Public Class Form2
                 Exit Sub
             End If
             TextBox3.Text = .control_domain
-            TextBox6.Text = .local_cert
-            TextBox5.Text = .local_cert_pub
-            TextBox4.Text = .remote_cert
+            TextBox6.Text = .local_cert.Replace("/", "\")
+            TextBox5.Text = .local_cert_pub.Replace("/", "\")
+            TextBox4.Text = .remote_cert.Replace("/", "\")
             TextBox7.Text = CStr(.remote_port)
             TextBox8.Text = CStr(.local_port)
             ComboBox1.SelectedIndex = .number - 1
             If Configuration.remote_host = "" Then TextBox10.Text = "<empty means :: or 0.0.0.0>"
             TextBox11.Text = .local_host
-            TextBox12.Text = .obfs4_exec
+            TextBox12.Text = .obfs4_exec.Replace("/", "\")
             TextBox14.Text = .debug_ip
             If System.IO.File.Exists(Configuration.executable) Then
-                TextBox15.Text = .executable
+                TextBox15.Text = .executable.Replace("/", "\")
             Else
                 Find_exec()
             End If
@@ -147,7 +147,7 @@ Public Class Form2
     End Sub
 
     Private Function Find_exec()
-        If Not (System.IO.File.Exists(Application.StartupPath & "/arkc-client.exe")) Then
+        If Not (System.IO.File.Exists(Application.StartupPath & "\arkc-client.exe")) Then
             MsgBox("ArkC client executable not found in default directory. Please set manually.", MsgBoxStyle.Information, "Loading Executable")
             OpenFileDialog1.Title = "Executable of ArkC Client"
             Dim result As DialogResult = OpenFileDialog1.ShowDialog()
@@ -158,14 +158,14 @@ Public Class Form2
                 Return False
             End If
         Else
-            TextBox15.Text = Application.StartupPath & "/arkc-client.exe"
+            TextBox15.Text = Application.StartupPath & "\arkc-client.exe"
             Return True
         End If
     End Function
 
     Private Sub Find_meek()
-        If System.IO.File.Exists(Application.StartupPath & "/meek-server.exe") Then
-            TextBox12.Text = Application.StartupPath & "/meek-server.exe"
+        If System.IO.File.Exists(Application.StartupPath & "\meek-server.exe") Then
+            TextBox12.Text = Application.StartupPath & "\meek-server.exe"
         End If
     End Sub
 

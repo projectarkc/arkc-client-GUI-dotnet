@@ -59,11 +59,19 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Form1.CheckForIllegalCrossThreadCalls = False
+        Try
+            Form1.CheckForIllegalCrossThreadCalls = False
+        Catch
+
+        End Try
     End Sub
 
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        Check_config()
+        Try
+            Check_config()
+        Catch
+
+        End Try
     End Sub
 
     Private Sub Check_config()
@@ -82,8 +90,8 @@ Public Class Form1
         fsTemp.Close()
         If cfg Is Nothing Then cfg = New config
         If cfg.Check_Validity() Then
-            If System.IO.File.Exists(cfg.executable) Then
-                Me.exec_path = cfg.executable
+            If System.IO.File.Exists(cfg.executable.Replace("/", "\")) Then
+                Me.exec_path = cfg.executable.Replace("/", "\")
                 Me.argv = " -v -c """ & configdir & """ " & cfg.argv
                 ToolStripStatusLabel1.Text = "Using executable: " + Me.exec_path
             Else
