@@ -344,6 +344,7 @@
 		<row><td>Component</td><td>{6D1843CE-77BD-4C69-B575-E49E6EC3D83F}</td><td>INSTALLDIR</td><td>2</td><td/><td>File</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{697DC4E9-F24D-4B69-A198-7E4C0914AD72}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>arkc_client.exe</td><td>{B3CED2B8-1560-4AE2-ADDA-77DFFA9C6DC4}</td><td>INSTALLDIR</td><td>2</td><td/><td>arkc_client.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>meek_server.exe</td><td>{1D8F6549-ECB7-495F-9D09-8D1B2616EDC6}</td><td>INSTALLDIR</td><td>2</td><td/><td>meek_server.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1872,6 +1873,7 @@
 		<row><td>AlwaysInstall</td><td>Component</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>arkc_client.exe</td></row>
+		<row><td>AlwaysInstall</td><td>meek_server.exe</td></row>
 	</table>
 
 	<table name="File">
@@ -1889,6 +1891,7 @@
 		<row><td>File</td><td>Component</td><td>ArkC-client-gui-msnet.主输出</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ArkC-client-gui-msnet&gt;|Built</td><td>3</td><td/></row>
 		<row><td>arkc_client.exe</td><td>arkc_client.exe</td><td>ARKC-C~1.EXE|arkc-client.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\arkcclient\dist\arkc-client.exe</td><td>1</td><td/></row>
 		<row><td>license</td><td>ISX_DEFAULTCOMPONENT</td><td>LICENSE</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\LICENSE</td><td>1</td><td/></row>
+		<row><td>meek_server.exe</td><td>meek_server.exe</td><td>MEEK-S~1.EXE|meek-server.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\meek\meek-server\meek-server.exe</td><td>1</td><td/></row>
 		<row><td>readme.rst</td><td>ISX_DEFAULTCOMPONENT</td><td>README.rst</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\README.rst</td><td>1</td><td/></row>
 		<row><td>version</td><td>ISX_DEFAULTCOMPONENT</td><td>VERSION</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\VERSION</td><td>1</td><td/></row>
 	</table>
@@ -2037,6 +2040,7 @@
 		<row><td>Component</td><td/><td/><td>_4F517195_002D_4BCD_AFEF_8721AB2355D8_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_FC486BDE_F5FA_4B25_9563_613B37D07187_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>arkc_client.exe</td><td/><td/><td>_21617635_0E42_493D_B2AD_214E8461AF45_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>meek_server.exe</td><td/><td/><td>_9DCC3C7A_B9CB_44A6_B6E9_92884EB9B069_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">

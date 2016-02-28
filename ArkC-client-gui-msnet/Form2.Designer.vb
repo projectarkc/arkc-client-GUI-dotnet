@@ -24,13 +24,6 @@ Partial Class Form2
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.TextBox14 = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TextBox13 = New System.Windows.Forms.TextBox()
@@ -45,6 +38,13 @@ Partial Class Form2
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -92,69 +92,6 @@ Partial Class Form2
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Advanced options"
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.Button7)
-        Me.Panel1.Controls.Add(Me.Button5)
-        Me.Panel1.Controls.Add(Me.Button6)
-        Me.Panel1.Location = New System.Drawing.Point(23, 635)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(399, 35)
-        Me.Panel1.TabIndex = 34
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(219, 7)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(177, 28)
-        Me.Button7.TabIndex = 6
-        Me.Button7.Text = "Hide Advanced Settings"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(6, 7)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(102, 28)
-        Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Save Config"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(124, 7)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(89, 28)
-        Me.Button6.TabIndex = 5
-        Me.Button6.Text = "Discard"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(338, 320)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(75, 28)
-        Me.Button10.TabIndex = 31
-        Me.Button10.Text = "Browse"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'TextBox15
-        '
-        Me.TextBox15.Location = New System.Drawing.Point(6, 323)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(325, 22)
-        Me.TextBox15.TabIndex = 33
-        Me.TextBox15.Text = "arkc-client.exe"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(8, 302)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(219, 17)
-        Me.Label16.TabIndex = 32
-        Me.Label16.Text = "Location of arkc-client executable"
         '
         'TextBox14
         '
@@ -275,6 +212,69 @@ Partial Class Form2
         Me.Label10.Size = New System.Drawing.Size(146, 17)
         Me.Label10.TabIndex = 17
         Me.Label10.Text = "DNS Servers to query"
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Button7)
+        Me.Panel1.Controls.Add(Me.Button5)
+        Me.Panel1.Controls.Add(Me.Button6)
+        Me.Panel1.Location = New System.Drawing.Point(23, 635)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(399, 35)
+        Me.Panel1.TabIndex = 34
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(219, 7)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(177, 28)
+        Me.Button7.TabIndex = 6
+        Me.Button7.Text = "Hide Advanced Settings"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(6, 7)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(102, 28)
+        Me.Button5.TabIndex = 4
+        Me.Button5.Text = "Save Config"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(124, 7)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(89, 28)
+        Me.Button6.TabIndex = 5
+        Me.Button6.Text = "Discard"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(338, 320)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(75, 28)
+        Me.Button10.TabIndex = 31
+        Me.Button10.Text = "Browse"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'TextBox15
+        '
+        Me.TextBox15.Location = New System.Drawing.Point(6, 323)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.Size = New System.Drawing.Size(325, 22)
+        Me.TextBox15.TabIndex = 33
+        Me.TextBox15.Text = "arkc-client.exe"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(8, 302)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(219, 17)
+        Me.Label16.TabIndex = 32
+        Me.Label16.Text = "Location of arkc-client executable"
         '
         'GroupBox1
         '
@@ -463,7 +463,6 @@ Partial Class Form2
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.AddExtension = False
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'Form2
         '
@@ -472,7 +471,10 @@ Partial Class Form2
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Form2"
         Me.Text = "ArkC Client Settings"
         Me.GroupBox3.ResumeLayout(False)

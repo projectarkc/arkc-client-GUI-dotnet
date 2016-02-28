@@ -6,8 +6,10 @@ Imports System.Management
 
 Public Class Form1
 
-    Private Property exec_path As String
-    Private Property argv As String
+    Private Property exec_path As String = Nothing
+    Private Property argv As String = Nothing
+
+    Private configdir As String = Application.LocalUserAppDataPath + "\client.json"
 
     Dim Process1 As Process = Nothing
     Dim Process2 As Process = Nothing
@@ -23,7 +25,11 @@ Public Class Form1
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Clean()
-        Execute()
+        If Me.exec_path Is Nothing Then
+            MsgBox("Cannot run ArkC. " + vbNewLine + "No valid configuration loaded.", vbExclamation, "Error")
+        Else
+            Execute()
+        End If
     End Sub
 
     Private Sub Execute()
@@ -33,12 +39,13 @@ Public Class Form1
         With Process1
             .StartInfo.UseShellExecute = False
             .StartInfo.RedirectStandardOutput = True
-            .StartInfo.CreateNoWindow = True
+            .StartInfo.CreateNoWindow = False 'True
             .StartInfo.FileName = Me.exec_path
-            .StartInfo.Arguments = " -v -c """ & Application.LocalUserAppDataPath + "\client.json" & """ " & Me.argv
+            .StartInfo.Arguments = " -v -c """ & configdir & """ " & Me.argv
             .Start()
-            ToolStripStatusLabel1.Text = Me.exec_path + Me.argv
+            ToolStripStatusLabel1.Text = "Running with config: " + configdir
             ToolStripStatusLabel2.Text = "Running"
+            Button1.Enabled = False
         End With
         Dim runThread = New Thread(AddressOf Process1_starting)
         runThread.Start()
@@ -51,12 +58,16 @@ Public Class Form1
         End Try
     End Sub
 
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Form1.CheckForIllegalCrossThreadCalls = False
+    End Sub
+
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Check_config()
     End Sub
 
     Private Sub Check_config()
-        If System.IO.File.Exists(Application.LocalUserAppDataPath + "\client.json") Then
+        If System.IO.File.Exists(configdir) Then
             Load_config()
         Else
             Form2.ShowDialog()
@@ -65,20 +76,39 @@ Public Class Form1
 
     Public Sub Load_config()
         Dim serializer As New JavaScriptSerializer()
-        Dim fsTemp As New System.IO.StreamReader(Application.LocalUserAppDataPath + "\client.json", IO.FileMode.Open)
+        Dim fsTemp As New System.IO.StreamReader(configdir)
         Dim cfg As config
         Dim contents As String
         contents = fsTemp.ReadToEnd()
         fsTemp.Close()
         cfg = serializer.Deserialize(Of config)(contents)
-        Me.exec_path = cfg.executable
-        Me.argv = " -v -c """ & Application.LocalUserAppDataPath & "\client.json" & """ " & cfg.argv
+        If cfg Is Nothing Then cfg = New config
+        If cfg.Check_Validity() Then
+            If System.IO.File.Exists(cfg.executable) Then
+                Me.exec_path = cfg.executable
+                Me.argv = " -v -c """ & configdir & """ " & cfg.argv
+                ToolStripStatusLabel1.Text = "Using executable: " + Me.exec_path
+            Else
+                MsgBox("Executable not found, resetting config.", vbExclamation, "Executable Not Found")
+                Form2.ShowDialog()
+            End If
+
+        Else
+            Invalid()
+        End If
+    End Sub
+
+    Private Sub Invalid()
+        If MsgBox("Invalid config in " + configdir + " ." + vbNewLine + "Reset the config?",
+                      vbYesNo, "Invalid Configuration File") = vbYes Then
+            Form2.ShowDialog()
+        End If
     End Sub
 
     Private Sub Process1_starting()
         Try
             Process1.CancelOutputRead()
-        Catch ex As Exception
+        Catch
 
         End Try
         Process1.BeginOutputReadLine()
@@ -88,7 +118,7 @@ Public Class Form1
     Private Sub Process2_starting()
         Try
             Process2.CancelOutputRead()
-        Catch ex As Exception
+        Catch
 
         End Try
         Process2.BeginOutputReadLine()
@@ -97,6 +127,7 @@ Public Class Form1
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Stop_exec()
+        Button1.Enabled = True
     End Sub
 
     Private Sub Stop_exec()
@@ -126,7 +157,7 @@ Public Class Form1
                 RichTextBox2.SelectionStart = RichTextBox2.Text.Length
                 RichTextBox1.ScrollToCaret()
             End If
-        Catch ex As Exception
+        Catch
 
         End Try
     End Sub
@@ -146,25 +177,12 @@ Public Class Form1
 
 
     'TODO: Capture end of execution
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        If Process2 IsNot Nothing Then Process2.Dispose()
-        Process2 = New Process
-        AddHandler Process2.OutputDataReceived, AddressOf Process1_OutputDataReceived_Process
-        With Process2
-            .StartInfo.UseShellExecute = False
-            .StartInfo.RedirectStandardOutput = True
-            .StartInfo.CreateNoWindow = True
-            .StartInfo.FileName = Me.exec_path
-            .StartInfo.Arguments = " --get-meek"
-            .Start()
-            ToolStripStatusLabel1.Text = Me.exec_path + .StartInfo.Arguments
-            ToolStripStatusLabel2.Text = "Running"
-        End With
-        Dim runThread = New Thread(AddressOf Process2_starting)
-        runThread.Start()
-    End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Key_Gen(Me.exec_path)
+    End Sub
+
+    Public Sub Key_Gen(exec_path As String)
         If Process2 IsNot Nothing Then Process2.Dispose()
         Process2 = New Process
         AddHandler Process2.OutputDataReceived, AddressOf Process1_OutputDataReceived_Process
@@ -172,11 +190,10 @@ Public Class Form1
             .StartInfo.UseShellExecute = False
             .StartInfo.RedirectStandardOutput = True
             .StartInfo.CreateNoWindow = True
-            .StartInfo.FileName = Me.exec_path
+            .StartInfo.FileName = exec_path
             .StartInfo.Arguments = " -kg"
             .Start()
-            ToolStripStatusLabel1.Text = Me.exec_path + .StartInfo.Arguments
-            ToolStripStatusLabel2.Text = "Running"
+            RichTextBox1.Text += "Generating Key, please wait..." + vbCrLf
         End With
         Dim runThread = New Thread(AddressOf Process2_starting)
         runThread.Start()

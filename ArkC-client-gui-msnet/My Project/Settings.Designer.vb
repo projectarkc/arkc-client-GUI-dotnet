@@ -63,10 +63,10 @@ Namespace My
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
     Friend Module MySettingsProperty
         
-        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.ArkC_client_gui_msnet.My.MySettings
+        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")> _
+        Friend ReadOnly Property Settings() As Global.ArkC_client.My.MySettings
             Get
-                Return Global.ArkC_client_gui_msnet.My.MySettings.Default
+                Return Global.ArkC_client.My.MySettings.Default
             End Get
         End Property
     End Module

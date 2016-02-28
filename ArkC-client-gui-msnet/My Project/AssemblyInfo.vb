@@ -8,9 +8,9 @@ Imports System.Runtime.InteropServices
 
 ' 查看程序集特性的值
 
-<Assembly: AssemblyTitle("ArkC-client-gui")> 
+<Assembly: AssemblyTitle("ArkC Client GUI")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyCompany("ArkC Technology Inc.")> 
 <Assembly: AssemblyProduct("ArkC-client-gui-msnet")> 
 <Assembly: AssemblyCopyright("Copyright ©  2015")> 
 <Assembly: AssemblyTrademark("")> 

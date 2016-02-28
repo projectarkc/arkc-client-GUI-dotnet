@@ -32,7 +32,6 @@ Partial Class Form1
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.Button11 = New System.Windows.Forms.Button()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
@@ -124,18 +123,9 @@ Partial Class Form1
         Me.OpenFileDialog1.AddExtension = False
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'Button11
-        '
-        Me.Button11.Location = New System.Drawing.Point(935, 155)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(88, 47)
-        Me.Button11.TabIndex = 7
-        Me.Button11.Text = "Download MEEK"
-        Me.Button11.UseVisualStyleBackColor = True
-        '
         'Button12
         '
-        Me.Button12.Location = New System.Drawing.Point(935, 208)
+        Me.Button12.Location = New System.Drawing.Point(935, 156)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(88, 47)
         Me.Button12.TabIndex = 8
@@ -162,13 +152,15 @@ Partial Class Form1
         '
         'ToolStripStatusLabel1
         '
+        Me.ToolStripStatusLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(902, 20)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(871, 20)
         Me.ToolStripStatusLabel1.Spring = True
         Me.ToolStripStatusLabel1.Text = "Using Executable:"
         '
         'ToolStripStatusLabel2
         '
+        Me.ToolStripStatusLabel2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.ToolStripStatusLabel2.Font = New System.Drawing.Font("Segoe UI", 8.765218!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
         Me.ToolStripStatusLabel2.Padding = New System.Windows.Forms.Padding(0, 0, 20, 0)
@@ -182,12 +174,14 @@ Partial Class Form1
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button12)
-        Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.GroupBox2)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(1050, 334)
         Me.Name = "Form1"
         Me.Text = "ArkC Client"
         Me.GroupBox2.ResumeLayout(False)
@@ -207,7 +201,6 @@ Partial Class Form1
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
-    Friend WithEvents Button11 As System.Windows.Forms.Button
     Friend WithEvents Button12 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
