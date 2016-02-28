@@ -1,4 +1,4 @@
-﻿Imports System.Web.Script.Serialization
+﻿Imports System.Runtime.Serialization.Json
 Imports System.IO
 Imports System.Text.Encoding
 Imports System.Threading
@@ -19,7 +19,7 @@ Public Class Form2
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         With OpenFileDialog1
-            .InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
+            .InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
             Dim result As DialogResult = .ShowDialog()
             .Title = "Executable of Server Public Key"
             If result = Windows.Forms.DialogResult.OK Then
@@ -63,10 +63,11 @@ Public Class Form2
 
     Private Sub Save()
         Dim Configuration As New config
-        Dim serializer As New JavaScriptSerializer()
         Dim sTempFileName As String = Application.LocalUserAppDataPath + "\client.json"
         Dim fsTemp As New System.IO.FileStream(sTempFileName, IO.FileMode.Create)
-
+        Dim ser As New DataContractJsonSerializer(GetType(config))
+        Dim ser2 As New DataContractJsonSerializer(GetType(List(Of List(Of Object))))
+        Dim dnstext As MemoryStream = New MemoryStream(UTF8.GetBytes(TextBox9.Text))
         Configuration.control_domain = TextBox3.Text
         Configuration.local_cert = TextBox6.Text.Replace("\", "/")
         Configuration.local_cert_pub = TextBox5.Text.Replace("\", "/")
@@ -82,12 +83,10 @@ Public Class Form2
         Configuration.executable = TextBox15.Text
         Configuration.argv = TextBox13.Text
         If CheckBox1.Checked Then Configuration.obfs_level = 3 Else Configuration.obfs_level = 0
-        Dim dns = serializer.Deserialize(Of List(Of List(Of Object)))(TextBox9.Text)
-        Configuration.dns_servers = dns
-        Dim serializedResult = serializer.Serialize(Configuration)
-        fsTemp.Write(UTF8.GetBytes(serializedResult.ToCharArray()), 0, UTF8.GetByteCount(serializedResult.ToCharArray()))
+        Configuration.dns_servers = ser2.ReadObject(dnstext)
+        ser.WriteObject(fsTemp, Configuration)
         fsTemp.Close()
-        
+
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
@@ -110,13 +109,14 @@ Public Class Form2
     End Sub
 
     Private Sub Load_Config()
-        Dim serializer As New JavaScriptSerializer()
-        Dim fsTemp As New System.IO.StreamReader(Application.LocalUserAppDataPath + "\client.json", IO.FileMode.Open)
+        Dim fsTemp As New System.IO.FileStream(Application.LocalUserAppDataPath + "\client.json", IO.FileMode.Open)
         Dim Configuration As config
-        Dim contents As String
-        contents = fsTemp.ReadToEnd()
+        Dim ser As New DataContractJsonSerializer(GetType(config))
+        Dim ser2 As New DataContractJsonSerializer(GetType(List(Of List(Of Object))))
+        Dim ms As MemoryStream = New MemoryStream()
+        Dim msreader As New StreamReader(ms, UTF8)
+        Configuration = ser.ReadObject(fsTemp)
         fsTemp.Close()
-        Configuration = serializer.Deserialize(Of config)(contents)
         If Configuration Is Nothing Then Configuration = New config
         With Configuration
             If Not (.Check_Validity()) Then
@@ -141,7 +141,8 @@ Public Class Form2
             End If
             TextBox13.Text = .argv
             If Configuration.obfs_level = 3 Then CheckBox1.Checked = True Else CheckBox1.Checked = False
-            TextBox9.Text = serializer.Serialize(Configuration.dns_servers)
+            ser2.WriteObject(ms, Configuration.dns_servers)
+            TextBox9.Text = msreader.ReadToEnd()
         End With
     End Sub
 
@@ -179,8 +180,8 @@ Public Class Form2
             If Find_exec() Then
                 Form1.Key_Gen(TextBox15.Text)
                 MsgBox("Key pair generated and stored. Path loaded to configuration file.", vbOKOnly, "Key Generated")
-                TextBox5.Text = System.Environment.GetFolderPath("%APPDATA") + "\ArkC\arkc_pub.asc"
-                TextBox6.Text = System.Environment.GetFolderPath("%APPDATA") + "\ArkC\arkc_pri.asc"
+                TextBox5.Text = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\ArkC\arkc_pub.asc"
+                TextBox6.Text = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\ArkC\arkc_pri.asc"
             Else
                 MsgBox("Keys cannot be generated. Please specify it manually.", vbExclamation, "Key Not Generated")
             End If

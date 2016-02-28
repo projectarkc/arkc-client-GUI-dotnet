@@ -25,8 +25,6 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -44,12 +42,10 @@ Partial Class Form1
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.RichTextBox1)
-        Me.GroupBox2.Controls.Add(Me.RichTextBox2)
-        Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(917, 243)
+        Me.GroupBox2.Size = New System.Drawing.Size(565, 243)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Output"
@@ -59,41 +55,22 @@ Partial Class Form1
         Me.RichTextBox1.Location = New System.Drawing.Point(6, 42)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(393, 195)
+        Me.RichTextBox1.Size = New System.Drawing.Size(547, 195)
         Me.RichTextBox1.TabIndex = 5
         Me.RichTextBox1.Text = ""
-        '
-        'RichTextBox2
-        '
-        Me.RichTextBox2.ForeColor = System.Drawing.Color.Red
-        Me.RichTextBox2.Location = New System.Drawing.Point(408, 42)
-        Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.ReadOnly = True
-        Me.RichTextBox2.Size = New System.Drawing.Size(503, 195)
-        Me.RichTextBox2.TabIndex = 4
-        Me.RichTextBox2.Text = ""
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(405, 18)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(139, 17)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Warnings and Errors"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(6, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(106, 17)
+        Me.Label1.Size = New System.Drawing.Size(144, 17)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "General Output"
+        Me.Label1.Text = "Command line Output"
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(935, 12)
+        Me.Button5.Location = New System.Drawing.Point(583, 19)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(88, 30)
         Me.Button5.TabIndex = 2
@@ -102,7 +79,7 @@ Partial Class Form1
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(935, 48)
+        Me.Button6.Location = New System.Drawing.Point(583, 55)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(88, 30)
         Me.Button6.TabIndex = 3
@@ -111,7 +88,7 @@ Partial Class Form1
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(935, 120)
+        Me.Button8.Location = New System.Drawing.Point(583, 127)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(88, 30)
         Me.Button8.TabIndex = 5
@@ -125,7 +102,7 @@ Partial Class Form1
         '
         'Button12
         '
-        Me.Button12.Location = New System.Drawing.Point(935, 156)
+        Me.Button12.Location = New System.Drawing.Point(583, 163)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(88, 47)
         Me.Button12.TabIndex = 8
@@ -134,7 +111,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(935, 84)
+        Me.Button1.Location = New System.Drawing.Point(583, 91)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(88, 30)
         Me.Button1.TabIndex = 9
@@ -146,7 +123,7 @@ Partial Class Form1
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 263)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1032, 25)
+        Me.StatusStrip1.Size = New System.Drawing.Size(682, 25)
         Me.StatusStrip1.TabIndex = 10
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -154,7 +131,7 @@ Partial Class Form1
         '
         Me.ToolStripStatusLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(871, 20)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(552, 20)
         Me.ToolStripStatusLabel1.Spring = True
         Me.ToolStripStatusLabel1.Text = "Using Executable:"
         '
@@ -170,7 +147,7 @@ Partial Class Form1
         'Form1
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(1032, 288)
+        Me.ClientSize = New System.Drawing.Size(682, 288)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button12)
@@ -181,7 +158,6 @@ Partial Class Form1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(1050, 334)
         Me.Name = "Form1"
         Me.Text = "ArkC Client"
         Me.GroupBox2.ResumeLayout(False)
@@ -193,13 +169,11 @@ Partial Class Form1
 
     End Sub
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
-    Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
     Friend WithEvents Button12 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button

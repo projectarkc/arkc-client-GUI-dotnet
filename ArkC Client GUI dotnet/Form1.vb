@@ -1,8 +1,8 @@
-﻿Imports System.Web.Script.Serialization
-Imports System.IO
+﻿Imports System.IO
 Imports System.Text.Encoding
 Imports System.Threading
 Imports System.Management
+Imports System.Runtime.Serialization.Json
 
 Public Class Form1
 
@@ -16,7 +16,7 @@ Public Class Form1
 
     Private Sub Clean()
         RichTextBox1.Text = ""
-        RichTextBox2.Text = ""
+        'RichTextBox2.Text = ""
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
@@ -39,7 +39,7 @@ Public Class Form1
         With Process1
             .StartInfo.UseShellExecute = False
             .StartInfo.RedirectStandardOutput = True
-            .StartInfo.CreateNoWindow = False 'True
+            .StartInfo.CreateNoWindow = True
             .StartInfo.FileName = Me.exec_path
             .StartInfo.Arguments = " -v -c """ & configdir & """ " & Me.argv
             .Start()
@@ -70,18 +70,16 @@ Public Class Form1
         If System.IO.File.Exists(configdir) Then
             Load_config()
         Else
-            Form2.ShowDialog()
+            show_form2()
         End If
     End Sub
 
     Public Sub Load_config()
-        Dim serializer As New JavaScriptSerializer()
-        Dim fsTemp As New System.IO.StreamReader(configdir)
+        Dim fsTemp As New System.IO.FileStream(configdir, FileMode.Open)
+        Dim ser As New DataContractJsonSerializer(GetType(config))
         Dim cfg As config
-        Dim contents As String
-        contents = fsTemp.ReadToEnd()
+        cfg = ser.ReadObject(fsTemp)
         fsTemp.Close()
-        cfg = serializer.Deserialize(Of config)(contents)
         If cfg Is Nothing Then cfg = New config
         If cfg.Check_Validity() Then
             If System.IO.File.Exists(cfg.executable) Then
@@ -90,7 +88,7 @@ Public Class Form1
                 ToolStripStatusLabel1.Text = "Using executable: " + Me.exec_path
             Else
                 MsgBox("Executable not found, resetting config.", vbExclamation, "Executable Not Found")
-                Form2.ShowDialog()
+                show_form2()
             End If
 
         Else
@@ -101,7 +99,7 @@ Public Class Form1
     Private Sub Invalid()
         If MsgBox("Invalid config in " + configdir + " ." + vbNewLine + "Reset the config?",
                       vbYesNo, "Invalid Configuration File") = vbYes Then
-            Form2.ShowDialog()
+            show_form2()
         End If
     End Sub
 
@@ -152,11 +150,11 @@ Public Class Form1
             RichTextBox1.Text += e.Data + vbCrLf
             RichTextBox1.SelectionStart = RichTextBox1.Text.Length
             RichTextBox1.ScrollToCaret()
-            If InStr(e.Data, "ERROR") <> 0 Or InStr(e.Data, "CRITICAL") <> 0 Or InStr(e.Data, "WARNING") <> 0 Then
-                RichTextBox2.Text += e.Data + vbCrLf
-                RichTextBox2.SelectionStart = RichTextBox2.Text.Length
-                RichTextBox1.ScrollToCaret()
-            End If
+            'If InStr(e.Data, "ERROR") <> 0 Or InStr(e.Data, "CRITICAL") <> 0 Or InStr(e.Data, "WARNING") <> 0 Then
+            'RichTextBox2.Text += e.Data + vbCrLf
+            'RichTextBox2.SelectionStart = RichTextBox2.Text.Length
+            'RichTextBox1.ScrollToCaret()
+            'End If
         Catch
 
         End Try
@@ -200,6 +198,12 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Form2.ShowDialog()
+        show_form2()
     End Sub
+
+    Private Sub show_form2()
+        Dim show_form As Form2 = New Form2
+        show_form.ShowDialog()
+    End Sub
+
 End Class

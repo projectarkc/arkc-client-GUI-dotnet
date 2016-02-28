@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.arkc_client.Form1
+            Me.MainForm = Global.ArkC_Client_GUI_dotnet.Form1
         End Sub
     End Class
 End Namespace

@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' 查看程序集特性的值
 
-<Assembly: AssemblyTitle("ArkC Client GUI")> 
+<Assembly: AssemblyTitle("ArkC Client GUI dotnet")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("ArkC Technology Inc.")> 
-<Assembly: AssemblyProduct("ArkC-client-gui-msnet")> 
-<Assembly: AssemblyCopyright("Copyright ©  2015")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("ArkC Client GUI dotnet")> 
+<Assembly: AssemblyCopyright("Copyright ©  2016")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
 
 '如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-<Assembly: Guid("b8787885-e336-4833-abf2-6c3f0be7d117")> 
+<Assembly: Guid("368b0387-091e-4620-8ba0-db40a036b22d")> 
 
 ' 程序集的版本信息由下面四个值组成:
 '
