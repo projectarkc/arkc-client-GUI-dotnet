@@ -25,7 +25,6 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
@@ -42,44 +41,34 @@ Partial Class Form1
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.RichTextBox1)
-        Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(565, 243)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Output"
+        Me.GroupBox2.Text = "Command line Output"
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(6, 42)
+        Me.RichTextBox1.Location = New System.Drawing.Point(6, 21)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(547, 195)
+        Me.RichTextBox1.Size = New System.Drawing.Size(547, 216)
         Me.RichTextBox1.TabIndex = 5
         Me.RichTextBox1.Text = ""
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 18)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(144, 17)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Command line Output"
         '
         'Button5
         '
         Me.Button5.Location = New System.Drawing.Point(583, 19)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(88, 30)
+        Me.Button5.Size = New System.Drawing.Size(88, 34)
         Me.Button5.TabIndex = 2
         Me.Button5.Text = "Start"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(583, 55)
+        Me.Button6.Location = New System.Drawing.Point(583, 59)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(88, 30)
         Me.Button6.TabIndex = 3
@@ -88,7 +77,7 @@ Partial Class Form1
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(583, 127)
+        Me.Button8.Location = New System.Drawing.Point(583, 131)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(88, 30)
         Me.Button8.TabIndex = 5
@@ -102,7 +91,7 @@ Partial Class Form1
         '
         'Button12
         '
-        Me.Button12.Location = New System.Drawing.Point(583, 163)
+        Me.Button12.Location = New System.Drawing.Point(583, 202)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(88, 47)
         Me.Button12.TabIndex = 8
@@ -111,7 +100,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(583, 91)
+        Me.Button1.Location = New System.Drawing.Point(583, 95)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(88, 30)
         Me.Button1.TabIndex = 9
@@ -162,7 +151,6 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "ArkC Client"
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -170,7 +158,6 @@ Partial Class Form1
 
     End Sub
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button8 As System.Windows.Forms.Button

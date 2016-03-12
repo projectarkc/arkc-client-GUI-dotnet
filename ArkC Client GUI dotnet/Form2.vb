@@ -64,7 +64,7 @@ Public Class Form2
     Private Sub Save()
         Dim Configuration As New config
         Dim sTempFileName As String = Application.LocalUserAppDataPath + "\client.json"
-        Dim fsTemp As New System.IO.FileStream(sTempFileName, IO.FileMode.Create)
+        Dim fsTemp As New System.IO.FileStream(sTempFileName, System.IO.FileMode.OpenOrCreate)
         Dim ser As New DataContractJsonSerializer(GetType(config))
         Dim ser2 As New DataContractJsonSerializer(GetType(List(Of List(Of Object))))
         Dim dnstext As MemoryStream = New MemoryStream(UTF8.GetBytes(TextBox9.Text))
@@ -100,7 +100,7 @@ Public Class Form2
         End With
     End Sub
 
-    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub Form2_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If Not Me.saved Then
             If MsgBox("Save config before closing?", vbYesNo, "Closing Settings") = vbYes Then
                 Save()
@@ -171,11 +171,16 @@ Public Class Form2
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles Me.Load
         shrink()
+        ComboBox1.SelectedIndex = 4
     End Sub
 
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         If System.IO.File.Exists(Application.LocalUserAppDataPath + "\client.json") Then
-            Load_Config()
+            Try
+                Load_Config()
+            Catch
+
+            End Try
         Else
             If Find_exec() Then
                 Form1.Key_Gen(TextBox15.Text)
@@ -185,7 +190,6 @@ Public Class Form2
             Else
                 MsgBox("Keys cannot be generated. Please specify it manually.", vbExclamation, "Key Not Generated")
             End If
-            ComboBox1.SelectedIndex = 4
         End If
     End Sub
 

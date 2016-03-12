@@ -157,9 +157,9 @@ Partial Class Form2
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Location = New System.Drawing.Point(6, 106)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(378, 21)
+        Me.CheckBox1.Size = New System.Drawing.Size(339, 21)
         Me.CheckBox1.TabIndex = 23
-        Me.CheckBox1.Text = "Use obfs4proxy with PTproxy script ( = Use obfs level 3)"
+        Me.CheckBox1.Text = "Enable MEEK, let server connect via GAE or CDN"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'TextBox11
@@ -218,14 +218,14 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.Button7)
         Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.Button6)
-        Me.Panel1.Location = New System.Drawing.Point(23, 635)
+        Me.Panel1.Location = New System.Drawing.Point(5, 635)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(399, 35)
+        Me.Panel1.Size = New System.Drawing.Size(417, 35)
         Me.Panel1.TabIndex = 34
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(219, 7)
+        Me.Button7.Location = New System.Drawing.Point(237, 7)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(177, 28)
         Me.Button7.TabIndex = 6
@@ -234,16 +234,16 @@ Partial Class Form2
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(6, 7)
+        Me.Button5.Location = New System.Drawing.Point(18, 7)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(102, 28)
+        Me.Button5.Size = New System.Drawing.Size(119, 28)
         Me.Button5.TabIndex = 4
-        Me.Button5.Text = "Save Config"
+        Me.Button5.Text = "Save and close"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(124, 7)
+        Me.Button6.Location = New System.Drawing.Point(142, 7)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(89, 28)
         Me.Button6.TabIndex = 5
@@ -446,9 +446,9 @@ Partial Class Form2
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(156, 25)
+        Me.TextBox3.Location = New System.Drawing.Point(203, 25)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(259, 22)
+        Me.TextBox3.Size = New System.Drawing.Size(212, 22)
         Me.TextBox3.TabIndex = 1
         '
         'Label3
@@ -456,9 +456,9 @@ Partial Class Form2
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(6, 28)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(144, 17)
+        Me.Label3.Size = New System.Drawing.Size(191, 17)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Request DNS domain"
+        Me.Label3.Text = "Delegated domain to request"
         '
         'OpenFileDialog1
         '
