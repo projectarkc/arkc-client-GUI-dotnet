@@ -65,6 +65,7 @@ Partial Class Form2
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -86,7 +87,7 @@ Partial Class Form2
         Me.GroupBox3.Controls.Add(Me.Label11)
         Me.GroupBox3.Controls.Add(Me.TextBox9)
         Me.GroupBox3.Controls.Add(Me.Label10)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 377)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 406)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(421, 259)
         Me.GroupBox3.TabIndex = 3
@@ -148,9 +149,9 @@ Partial Class Form2
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(3, 129)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(223, 17)
+        Me.Label13.Size = New System.Drawing.Size(192, 17)
         Me.Label13.TabIndex = 25
-        Me.Label13.Text = "Location of obfs4proxy executable"
+        Me.Label13.Text = "Location of MEEK executable"
         '
         'CheckBox1
         '
@@ -202,7 +203,7 @@ Partial Class Form2
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(260, 22)
         Me.TextBox9.TabIndex = 18
-        Me.TextBox9.Text = "[[""114.114.114.114"", 53], [""8.8.8.8"", 53]]"
+        Me.TextBox9.Text = "[[""8.8.8.8"", 53], [""208.67.222.222"", 53], [""8.8.4.4"", 53]]"
         '
         'Label10
         '
@@ -218,7 +219,7 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.Button7)
         Me.Panel1.Controls.Add(Me.Button5)
         Me.Panel1.Controls.Add(Me.Button6)
-        Me.Panel1.Location = New System.Drawing.Point(5, 635)
+        Me.Panel1.Location = New System.Drawing.Point(5, 664)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(417, 35)
         Me.Panel1.TabIndex = 34
@@ -278,6 +279,7 @@ Partial Class Form2
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button8)
         Me.GroupBox1.Controls.Add(Me.Button10)
         Me.GroupBox1.Controls.Add(Me.CheckBox2)
         Me.GroupBox1.Controls.Add(Me.TextBox15)
@@ -301,7 +303,7 @@ Partial Class Form2
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(421, 359)
+        Me.GroupBox1.Size = New System.Drawing.Size(421, 391)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Essentials"
@@ -464,10 +466,19 @@ Partial Class Form2
         '
         Me.OpenFileDialog1.AddExtension = False
         '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(31, 351)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(368, 34)
+        Me.Button8.TabIndex = 34
+        Me.Button8.Text = "Use public test service (for testing)"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
         'Form2
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(445, 676)
+        Me.ClientSize = New System.Drawing.Size(445, 704)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
@@ -527,4 +538,5 @@ Partial Class Form2
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Button8 As System.Windows.Forms.Button
 End Class

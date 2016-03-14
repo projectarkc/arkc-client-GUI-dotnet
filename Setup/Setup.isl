@@ -342,6 +342,7 @@
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>Component</td><td>{4B22E184-7490-474F-B426-41253079FBFC}</td><td>INSTALLDIR</td><td>2</td><td/><td>File</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{ACE471E5-9C73-4C73-8CDA-72FD4C2F571A}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{34EC57BE-6936-4F6D-9D2C-08BDCE237083}</td><td>PUBLIC</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>arkc_client.exe</td><td>{067B2064-663C-4002-A76E-D255880C73F7}</td><td>INSTALLDIR</td><td>2</td><td/><td>arkc_client.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>meek_server.exe</td><td>{51EB8254-83FB-4334-873B-588ECF3C3ED7}</td><td>INSTALLDIR</td><td>2</td><td/><td>meek_server.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
@@ -1154,6 +1155,7 @@
 		<row><td>MY_PRODUCT_NAME</td><td>ARKC_TECHNOLOGY_INC.</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
 		<row><td>MyPicturesFolder</td><td>TARGETDIR</td><td>.:MyPict~1|MyPictures</td><td/><td>0</td><td/></row>
 		<row><td>NetHoodFolder</td><td>TARGETDIR</td><td>.:NetHood</td><td/><td>0</td><td/></row>
+		<row><td>PUBLIC</td><td>INSTALLDIR</td><td>public</td><td/><td>0</td><td/></row>
 		<row><td>PersonalFolder</td><td>TARGETDIR</td><td>.:Personal</td><td/><td>0</td><td/></row>
 		<row><td>PrimaryVolumePath</td><td>TARGETDIR</td><td>.:Primar~1|PrimaryVolumePath</td><td/><td>0</td><td/></row>
 		<row><td>PrintHoodFolder</td><td>TARGETDIR</td><td>.:PRINTH~1|PrintHood</td><td/><td>0</td><td/></row>
@@ -1868,6 +1870,7 @@
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>Component</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>AlwaysInstall</td><td>arkc_client.exe</td></row>
 		<row><td>AlwaysInstall</td><td>meek_server.exe</td></row>
 	</table>
@@ -1886,9 +1889,12 @@
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>File</td><td>Component</td><td>ArkC Client GUI dotnet.主输出</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ArkC Client GUI dotnet&gt;|Built</td><td>3</td><td/></row>
 		<row><td>arkc_client.exe</td><td>arkc_client.exe</td><td>ARKC-C~1.EXE|arkc-client.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\arkcclient\dist\arkc-client.exe</td><td>1</td><td/></row>
+		<row><td>client.pri.asc</td><td>ISX_DEFAULTCOMPONENT1</td><td>CLIENT~1.ASC|client.pri.asc</td><td>0</td><td/><td/><td/><td>1</td><td>D:\testfiles\client.pri.asc</td><td>1</td><td/></row>
+		<row><td>client.pub.asc</td><td>ISX_DEFAULTCOMPONENT1</td><td>CLIENT~1.ASC|client.pub.asc</td><td>0</td><td/><td/><td/><td>1</td><td>D:\testfiles\client.pub.asc</td><td>1</td><td/></row>
 		<row><td>license</td><td>ISX_DEFAULTCOMPONENT</td><td>LICENSE</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\LICENSE</td><td>1</td><td/></row>
 		<row><td>meek_server.exe</td><td>meek_server.exe</td><td>MEEK-S~1.EXE|meek-server.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\meek\meek-server\meek-server.exe</td><td>1</td><td/></row>
 		<row><td>readme.rst</td><td>ISX_DEFAULTCOMPONENT</td><td>README.rst</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\README.rst</td><td>1</td><td/></row>
+		<row><td>server.pub.asc</td><td>ISX_DEFAULTCOMPONENT1</td><td>SERVER~1.ASC|server.pub.asc</td><td>0</td><td/><td/><td/><td>1</td><td>D:\testfiles\server.pub.asc</td><td>1</td><td/></row>
 		<row><td>version</td><td>ISX_DEFAULTCOMPONENT</td><td>VERSION</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\VERSION</td><td>1</td><td/></row>
 	</table>
 
@@ -2035,6 +2041,7 @@
 		<col def="S0">Miscellaneous</col>
 		<row><td>Component</td><td/><td/><td>_7B2BD4BB_BAE0_45BE_9F68_7A20E16202B9_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_9A9CAAE9_E3B1_4DD8_8182_5DE0F5E5FC23_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_E1037220_7B5A_445B_A910_D712CBEA60E3_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>arkc_client.exe</td><td/><td/><td>_5CAA607F_063B_4594_9D24_58285637DB92_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>meek_server.exe</td><td/><td/><td>_C37A571A_0F08_4643_8B28_A082B2086F52_FILTER</td><td/><td/><td/><td/></row>
 	</table>

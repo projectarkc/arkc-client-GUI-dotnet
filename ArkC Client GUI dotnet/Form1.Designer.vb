@@ -95,7 +95,7 @@ Partial Class Form1
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(88, 47)
         Me.Button12.TabIndex = 8
-        Me.Button12.Text = "Generate Key"
+        Me.Button12.Text = "Generate Key Pair"
         Me.Button12.UseVisualStyleBackColor = True
         '
         'Button1

@@ -85,9 +85,12 @@ Public Class Form1
     Public Sub Load_config()
         Dim fsTemp As New System.IO.FileStream(configdir, FileMode.Open)
         Dim ser As New DataContractJsonSerializer(GetType(config))
-        Dim cfg As config
-        cfg = ser.ReadObject(fsTemp)
-        fsTemp.Close()
+        Dim cfg As config = Nothing
+        Try
+            cfg = ser.ReadObject(fsTemp)
+        Finally
+            fsTemp.Close()
+        End Try
         If cfg Is Nothing Then cfg = New config
         If cfg.Check_Validity() Then
             If System.IO.File.Exists(cfg.executable.Replace("/", "\")) Then

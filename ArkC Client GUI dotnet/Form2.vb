@@ -54,7 +54,7 @@ Public Class Form2
         With OpenFileDialog1
             .InitialDirectory = Application.StartupPath
             Dim result As DialogResult = .ShowDialog()
-            .Title = "Executable of obfs4proxy"
+            .Title = "Executable of meek-server.exe"
             If result = Windows.Forms.DialogResult.OK Then
                 TextBox12.Text = .FileName
             End If
@@ -64,7 +64,8 @@ Public Class Form2
     Private Sub Save()
         Dim Configuration As New config
         Dim sTempFileName As String = Application.LocalUserAppDataPath + "\client.json"
-        Dim fsTemp As New System.IO.FileStream(sTempFileName, System.IO.FileMode.OpenOrCreate)
+
+        Dim fsTemp As New System.IO.FileStream(sTempFileName, System.IO.FileMode.Create)
         Dim ser As New DataContractJsonSerializer(GetType(config))
         Dim ser2 As New DataContractJsonSerializer(GetType(List(Of List(Of Object))))
         Dim dnstext As MemoryStream = New MemoryStream(UTF8.GetBytes(TextBox9.Text))
@@ -83,7 +84,13 @@ Public Class Form2
         Configuration.executable = TextBox15.Text
         Configuration.argv = TextBox13.Text
         If CheckBox1.Checked Then Configuration.obfs_level = 3 Else Configuration.obfs_level = 0
-        Configuration.dns_servers = ser2.ReadObject(dnstext)
+        Try
+            Configuration.dns_servers = ser2.ReadObject(dnstext)
+        Catch
+            MsgBox("Illegal dns server settings, using default value.", vbOKOnly, "DNS Parsing Error")
+            dnstext = New MemoryStream(UTF8.GetBytes("[[""8.8.8.8"", 53], [""208.67.222.222"", 53], [""8.8.4.4"", 53]]"))
+            Configuration.dns_servers = ser2.ReadObject(dnstext)
+        End Try
         ser.WriteObject(fsTemp, Configuration)
         fsTemp.Close()
 
@@ -110,13 +117,18 @@ Public Class Form2
 
     Private Sub Load_Config()
         Dim fsTemp As New System.IO.FileStream(Application.LocalUserAppDataPath + "\client.json", IO.FileMode.Open)
-        Dim Configuration As config
+        Dim Configuration As config = Nothing
         Dim ser As New DataContractJsonSerializer(GetType(config))
         Dim ser2 As New DataContractJsonSerializer(GetType(List(Of List(Of Object))))
         Dim ms As MemoryStream = New MemoryStream()
-        Dim msreader As New StreamReader(ms, UTF8)
-        Configuration = ser.ReadObject(fsTemp)
-        fsTemp.Close()
+        Dim msreader As New StreamReader(ms)
+        Try
+            Configuration = ser.ReadObject(fsTemp)
+        Catch
+            Find_exec()
+        Finally
+            fsTemp.Close()
+        End Try
         If Configuration Is Nothing Then Configuration = New config
         With Configuration
             If Not (.Check_Validity()) Then
@@ -142,6 +154,7 @@ Public Class Form2
             TextBox13.Text = .argv
             If Configuration.obfs_level = 3 Then CheckBox1.Checked = True Else CheckBox1.Checked = False
             ser2.WriteObject(ms, Configuration.dns_servers)
+            ms.Seek(0, SeekOrigin.Begin)
             TextBox9.Text = msreader.ReadToEnd()
         End With
     End Sub
@@ -172,6 +185,7 @@ Public Class Form2
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles Me.Load
         shrink()
         ComboBox1.SelectedIndex = 4
+
     End Sub
 
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -191,6 +205,7 @@ Public Class Form2
                 MsgBox("Keys cannot be generated. Please specify it manually.", vbExclamation, "Key Not Generated")
             End If
         End If
+        Find_meek()
     End Sub
 
     Private Function IsValidPort(input As String) As Boolean
@@ -240,4 +255,11 @@ Public Class Form2
         Me.show_advanced = True
     End Sub
 
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        TextBox3.Text = "testing.arkc.org"
+        TextBox4.Text = Application.StartupPath & "\public\server.pub.asc"
+        TextBox5.Text = Application.StartupPath & "\public\client.pub.asc"
+        TextBox6.Text = Application.StartupPath & "\public\client.pri.asc"
+        CheckBox1.Checked = True
+    End Sub
 End Class
