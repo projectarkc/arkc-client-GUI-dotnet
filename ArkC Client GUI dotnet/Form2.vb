@@ -79,7 +79,7 @@ Public Class Form2
         If TextBox10.Text = "<empty means :: or 0.0.0.0>" Then TextBox10.Text = ""
         Configuration.remote_host = TextBox10.Text
         Configuration.local_host = TextBox11.Text
-        Configuration.obfs4_exec = TextBox12.Text
+        Configuration.pt_exec = TextBox12.Text.Replace("\", "/")
         Configuration.debug_ip = TextBox14.Text
         Configuration.executable = TextBox15.Text
         Configuration.argv = TextBox13.Text
@@ -144,7 +144,7 @@ Public Class Form2
             ComboBox1.SelectedIndex = .number - 1
             If Configuration.remote_host = "" Then TextBox10.Text = "<empty means :: or 0.0.0.0>"
             TextBox11.Text = .local_host
-            TextBox12.Text = .obfs4_exec.Replace("/", "\")
+            TextBox12.Text = .pt_exec.Replace("/", "\")
             TextBox14.Text = .debug_ip
             If System.IO.File.Exists(Configuration.executable) Then
                 TextBox15.Text = .executable.Replace("/", "\")

@@ -3,6 +3,7 @@ Imports System.Text.Encoding
 Imports System.Threading
 Imports System.Management
 Imports System.Runtime.Serialization.Json
+Imports NetFwTypeLib
 
 Public Class Form1
 
@@ -59,8 +60,9 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Form1.CheckForIllegalCrossThreadCalls = False
         Try
-            Form1.CheckForIllegalCrossThreadCalls = False
+            'TODO: Add Windows Firewall Exceptions
         Catch
 
         End Try
