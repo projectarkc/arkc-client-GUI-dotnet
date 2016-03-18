@@ -3,7 +3,6 @@ Imports System.Text.Encoding
 Imports System.Threading
 Imports System.Management
 Imports System.Runtime.Serialization.Json
-Imports NetFwTypeLib
 
 Public Class Form1
 
@@ -63,6 +62,9 @@ Public Class Form1
         Form1.CheckForIllegalCrossThreadCalls = False
         Try
             'TODO: Add Windows Firewall Exceptions
+            If Not (firewall.Check_Exception_Exec("")) Then
+                MsgBox("Add exceptions")
+            End If
         Catch
 
         End Try
