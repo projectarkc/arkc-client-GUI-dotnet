@@ -16,7 +16,6 @@ Public Class Form1
 
     Private Sub Clean()
         RichTextBox1.Text = ""
-        'RichTextBox2.Text = ""
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
@@ -36,7 +35,9 @@ Public Class Form1
         If Process1 IsNot Nothing Then Process1.Dispose()
         Process1 = New Process
         AddHandler Process1.OutputDataReceived, AddressOf Process1_OutputDataReceived_Process
+        AddHandler Process1.Exited, AddressOf Process1_Exited
         With Process1
+            .EnableRaisingEvents = True
             .StartInfo.UseShellExecute = False
             .StartInfo.RedirectStandardOutput = True
             .StartInfo.CreateNoWindow = True
@@ -65,6 +66,7 @@ Public Class Form1
             If Not (firewall.Check_Exception_Exec("")) Then
                 MsgBox("Add exceptions")
             End If
+
         Catch
 
         End Try
@@ -154,7 +156,7 @@ Public Class Form1
             End Try
             Process1.Dispose()
             Process1 = Nothing
-            RichTextBox1.Text = RichTextBox1.Text + vbCrLf + "Execution Terminated" + vbCrLf
+            RichTextBox1.AppendText(vbCrLf + "Execution Terminated" + vbCrLf)
             ToolStripStatusLabel1.Text = "Using executable: " + Me.exec_path
             ToolStripStatusLabel2.Text = "Not running"
         End If
@@ -162,17 +164,19 @@ Public Class Form1
 
     Private Sub Process1_OutputDataReceived_Process(sender As Object, e As DataReceivedEventArgs)
         Try
-            RichTextBox1.Text += e.Data + vbCrLf
-            RichTextBox1.SelectionStart = RichTextBox1.Text.Length
+            RichTextBox1.AppendText(e.Data + vbCrLf)
             RichTextBox1.ScrollToCaret()
-            'If InStr(e.Data, "ERROR") <> 0 Or InStr(e.Data, "CRITICAL") <> 0 Or InStr(e.Data, "WARNING") <> 0 Then
-            'RichTextBox2.Text += e.Data + vbCrLf
-            'RichTextBox2.SelectionStart = RichTextBox2.Text.Length
-            'RichTextBox1.ScrollToCaret()
             'End If
         Catch
 
         End Try
+    End Sub
+
+    Private Sub Process1_Exited(sender As Object, e As DataReceivedEventArgs)
+        RichTextBox1.AppendText(vbCrLf + "Execution Terminated" + vbCrLf)
+        RichTextBox1.ScrollToCaret()
+        ToolStripStatusLabel1.Text = "Using executable: " + Me.exec_path
+        ToolStripStatusLabel2.Text = "Not running"
     End Sub
 
     Private Sub killtree(myId As Integer)
@@ -199,14 +203,17 @@ Public Class Form1
         If Process2 IsNot Nothing Then Process2.Dispose()
         Process2 = New Process
         AddHandler Process2.OutputDataReceived, AddressOf Process1_OutputDataReceived_Process
+        AddHandler Process2.Exited, AddressOf Process1_Exited
         With Process2
+            .EnableRaisingEvents = True
             .StartInfo.UseShellExecute = False
             .StartInfo.RedirectStandardOutput = True
             .StartInfo.CreateNoWindow = True
             .StartInfo.FileName = exec_path
             .StartInfo.Arguments = " -kg"
             .Start()
-            RichTextBox1.Text += "Generating Key, please wait..." + vbCrLf
+            RichTextBox1.AppendText("Generating Key, please wait..." + vbCrLf)
+            RichTextBox1.ScrollToCaret()
         End With
         Dim runThread = New Thread(AddressOf Process2_starting)
         runThread.Start()

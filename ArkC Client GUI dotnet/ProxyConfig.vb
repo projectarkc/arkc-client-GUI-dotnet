@@ -10,18 +10,28 @@ Module ProxyConfig
     End Function
 
     Public Function SetProxy(addr As String, port As UInteger) As Boolean
-        Dim reg As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings", True)
-        reg.SetValue("ProxyEnable", 1)
-        reg.SetValue("ProxyServer", addr + ":" + port)
-        settingsReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_SETTINGS_CHANGED, IntPtr.Zero, 0);
-        refreshReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_REFRESH, IntPtr.Zero, 0);
+        Try
+            Dim reg As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings", True)
+            reg.SetValue("ProxyEnable", 1)
+            reg.SetValue("ProxyServer", addr + ":" + CStr(port))
+            settingsReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_SETTINGS_CHANGED, IntPtr.Zero, 0)
+            refreshReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_REFRESH, IntPtr.Zero, 0)
+        Catch
+            Return False
+        End Try
+        Return True
     End Function
 
     Public Function DisableProxy(addr As String, port As UInteger) As Boolean
-        Dim reg As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings", True)
-        reg.SetValue("ProxyEnable", 0)
-        reg.DeleteValue("ProxyServer")
-        settingsReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_SETTINGS_CHANGED, IntPtr.Zero, 0);
-        refreshReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_REFRESH, IntPtr.Zero, 0);
+        Try
+            Dim reg As RegistryKey = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings", True)
+            reg.SetValue("ProxyEnable", 0)
+            reg.DeleteValue("ProxyServer")
+            settingsReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_SETTINGS_CHANGED, IntPtr.Zero, 0)
+            refreshReturn = InternetSetOption(IntPtr.Zero, INTERNET_OPTION_REFRESH, IntPtr.Zero, 0)
+        Catch
+            Return False
+        End Try
+        Return True
     End Function
 End Module

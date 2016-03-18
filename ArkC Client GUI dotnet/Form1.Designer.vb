@@ -72,12 +72,12 @@ Partial Class Form1
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(88, 30)
         Me.Button6.TabIndex = 3
-        Me.Button6.Text = "Hibernate"
+        Me.Button6.Text = "Stop"
         Me.Button6.UseVisualStyleBackColor = True
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(583, 131)
+        Me.Button8.Location = New System.Drawing.Point(583, 145)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(88, 30)
         Me.Button8.TabIndex = 5
@@ -100,7 +100,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(583, 95)
+        Me.Button1.Location = New System.Drawing.Point(583, 109)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(88, 30)
         Me.Button1.TabIndex = 9
