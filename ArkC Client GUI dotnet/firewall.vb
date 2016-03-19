@@ -47,7 +47,7 @@ Public Module firewall
         Catch ex As Exception
             Return False
         End Try
-        Return True
+            Return True
     End Function
 
     Public Function Run_Add() As Boolean
@@ -55,7 +55,7 @@ Public Module firewall
         proc.UseShellExecute = True
         proc.WorkingDirectory = Environment.CurrentDirectory
         proc.FileName = Application.StartupPath + "\FwAddException.exe"
-        proc.Arguments = " " + Application.LocalUserAppDataPath + "\client.json"
+        proc.Arguments = " """ + Application.LocalUserAppDataPath + "\client.json"""
         proc.Verb = "runas"
         'Try
         Process.Start(proc)

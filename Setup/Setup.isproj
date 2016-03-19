@@ -33,5 +33,9 @@
 			<Name>ArkC Client GUI dotnet</Name>
 			<Project>{F6D441E4-2AEE-43DB-B92C-5AABAD65E5FE}</Project>
 		</ProjectReference>
+		<ProjectReference Include="..\FwAddException\FwAddException.vbproj">
+			<Name>FwAddException</Name>
+			<Project>{B76AF233-0B31-4F9C-8BCA-AA3A4745815B}</Project>
+		</ProjectReference>
 	</ItemGroup>
 </Project>

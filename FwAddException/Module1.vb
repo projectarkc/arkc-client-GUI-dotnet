@@ -3,7 +3,7 @@ Imports System.IO
 Imports System.Runtime.Serialization.Json
 Module Module1
     Sub Main(ByVal args() As String)
-        Dim fsTemp As New System.IO.FileStream(args(1), FileMode.Open)
+        Dim fsTemp As New System.IO.FileStream(args(0), FileMode.Open)
         Dim ser As New DataContractJsonSerializer(GetType(config))
         Dim cfg As config = Nothing
         Dim success As Boolean = True

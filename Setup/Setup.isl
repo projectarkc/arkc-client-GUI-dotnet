@@ -341,6 +341,7 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>Component</td><td>{4B22E184-7490-474F-B426-41253079FBFC}</td><td>INSTALLDIR</td><td>2</td><td/><td>File</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Component1</td><td>{BB5FDA3E-DAF6-4823-84CF-0D4F8405830D}</td><td>INSTALLDIR</td><td>2</td><td/><td>File1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{ACE471E5-9C73-4C73-8CDA-72FD4C2F571A}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{34EC57BE-6936-4F6D-9D2C-08BDCE237083}</td><td>PUBLIC</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>arkc_client.exe</td><td>{067B2064-663C-4002-A76E-D255880C73F7}</td><td>INSTALLDIR</td><td>2</td><td/><td>arkc_client.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1870,6 +1871,7 @@
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>Component</td></row>
+		<row><td>AlwaysInstall</td><td>Component1</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>AlwaysInstall</td><td>arkc_client.exe</td></row>
@@ -1889,6 +1891,7 @@
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>File</td><td>Component</td><td>ArkC Client GUI dotnet.主输出</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ArkC Client GUI dotnet&gt;|Built</td><td>3</td><td/></row>
+		<row><td>File1</td><td>Component1</td><td>FwAddException.主输出</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;FwAddException&gt;|Built</td><td>3</td><td/></row>
 		<row><td>arkc_client.exe</td><td>arkc_client.exe</td><td>ARKC-C~1.EXE|arkc-client.exe</td><td>0</td><td/><td/><td/><td>1</td><td>D:\git\arkc-client\arkcclient\dist\arkc-client.exe</td><td>1</td><td/></row>
 		<row><td>client.pri.asc</td><td>ISX_DEFAULTCOMPONENT1</td><td>CLIENT~1.ASC|client.pri.asc</td><td>0</td><td/><td/><td/><td>1</td><td>D:\testfiles\client.pri.asc</td><td>1</td><td/></row>
 		<row><td>client.pub.asc</td><td>ISX_DEFAULTCOMPONENT1</td><td>CLIENT~1.ASC|client.pub.asc</td><td>0</td><td/><td/><td/><td>1</td><td>D:\testfiles\client.pub.asc</td><td>1</td><td/></row>
@@ -2041,6 +2044,7 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>Component</td><td/><td/><td>_7B2BD4BB_BAE0_45BE_9F68_7A20E16202B9_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Component1</td><td/><td/><td>_88CB792E_DA19_49F4_8DAD_98A39D374C44_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_9A9CAAE9_E3B1_4DD8_8182_5DE0F5E5FC23_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_E1037220_7B5A_445B_A910_D712CBEA60E3_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>arkc_client.exe</td><td/><td/><td>_5CAA607F_063B_4594_9D24_58285637DB92_FILTER</td><td/><td/><td/><td/></row>
@@ -2347,6 +2351,7 @@
 		<col def="i4">Type</col>
 		<row><td>ArkC Client GUI dotnet</td><td>ArkC Client GUI dotnet\ArkC Client GUI dotnet.vbproj</td><td/><td>2</td></row>
 		<row><td>CommonFilesFolder</td><td/><td/><td>1</td></row>
+		<row><td>FwAddException</td><td>FwAddException\FwAddException.vbproj</td><td/><td>2</td></row>
 		<row><td>ISPROJECTDIR</td><td/><td/><td>1</td></row>
 		<row><td>ISProductFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectDataFolder</td><td/><td/><td>1</td></row>
@@ -4389,7 +4394,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]ArkC Client GUI dotnet.主输出</td><td/></row>
 		<row><td>ProductCode</td><td>{B10A1194-6F7B-4F01-97D7-FCA4A2E7CADF}</td><td/></row>
 		<row><td>ProductName</td><td>ArkC Client GUI</td><td/></row>
-		<row><td>ProductVersion</td><td>1.1.0</td><td/></row>
+		<row><td>ProductVersion</td><td>1.1.1</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4402,7 +4407,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>SERIALNUMBER</td><td/><td/></row>
 		<row><td>SERIALNUMVALSUCCESSRETVAL</td><td>1</td><td/></row>
 		<row><td>SHOWLAUNCHPROGRAM</td><td>-1</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR;ISACTIONPROP1;ISACTIONPROP2;ISACTIONPROP3</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
 		<row><td>UpgradeCode</td><td>{27703A2A-6073-48F5-946C-74849EC49D08}</td><td/></row>
@@ -4679,6 +4684,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>{00000000-0000-0000-0000-000000000000}</td><td>***ALL_VERSIONS***</td><td></td><td></td><td>2</td><td/><td>ISFOUNDNEWERPRODUCTVERSION</td><td>ISPreventDowngrade</td></row>
 		<row><td>{27703A2A-6073-48F5-946C-74849EC49D08}</td><td>1.0.2.0</td><td>1.0.2.0</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP1</td><td>v0.2.3</td></row>
 		<row><td>{27703A2A-6073-48F5-946C-74849EC49D08}</td><td>1.0.3</td><td>1.0.3</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP2</td><td>v0.3.0</td></row>
+		<row><td>{27703A2A-6073-48F5-946C-74849EC49D08}</td><td>1.1.0</td><td>1.1.0</td><td>1033</td><td>768</td><td/><td>ISACTIONPROP3</td><td>v0.3.0.post2</td></row>
 	</table>
 
 	<table name="Verb">
