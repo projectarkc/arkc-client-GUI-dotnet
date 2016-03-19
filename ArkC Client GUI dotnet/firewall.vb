@@ -55,14 +55,15 @@ Public Module firewall
         proc.UseShellExecute = True
         proc.WorkingDirectory = Environment.CurrentDirectory
         proc.FileName = Application.StartupPath + "\FwAddException.exe"
+        proc.Arguments = " " + Application.LocalUserAppDataPath + "\client.json"
         proc.Verb = "runas"
-        Try
-            Process.Start(proc)
-            Return True
-        Catch
-            MsgBox("Fail to add Windows Firewall exceptions.", vbExclamation, "Add Exceptions failed.")
-            Return False
-        End Try
+        'Try
+        Process.Start(proc)
+        Return True
+        'Catch
+        'MsgBox("Fail to add Windows Firewall exceptions.", vbExclamation, "Add Exceptions failed.")
+        'Return False
+        'End Try
     End Function
 
     Public Function Check_Exception_Exec(dir As String) As Boolean

@@ -8,6 +8,7 @@ Public Class Form1
 
     Private Property exec_path As String = Nothing
     Private Property argv As String = Nothing
+    Private Property proxy_set As Boolean = False
 
     Private configdir As String = Application.LocalUserAppDataPath + "\client.json"
 
@@ -56,21 +57,20 @@ Public Class Form1
         Try
             If Not (Process1.HasExited) Then killtree(Process1.Id)
         Catch
+
+        End Try
+        Try
+            ProxyConfig.DisableProxy()
+            Me.proxy_set = False
+        Catch
+
         End Try
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
         Form1.CheckForIllegalCrossThreadCalls = False
-        Try
-            'TODO: Add Windows Firewall Exceptions
-            If Not (firewall.Check_Exception_Exec("")) Then
-                MsgBox("Add exceptions")
-            End If
-
-        Catch
-
-        End Try
     End Sub
+
 
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Try
@@ -86,12 +86,14 @@ Public Class Form1
         Else
             show_form2()
         End If
+
     End Sub
 
     Public Sub Load_config()
         Dim fsTemp As New System.IO.FileStream(configdir, FileMode.Open)
         Dim ser As New DataContractJsonSerializer(GetType(config))
         Dim cfg As config = Nothing
+        Dim add_firewall As Boolean = False
         Try
             cfg = ser.ReadObject(fsTemp)
         Finally
@@ -103,6 +105,13 @@ Public Class Form1
                 Me.exec_path = cfg.executable.Replace("/", "\")
                 Me.argv = " -v -c """ & configdir & """ " & cfg.argv
                 ToolStripStatusLabel1.Text = "Using executable: " + Me.exec_path
+                add_firewall = add_firewall Or firewall.Check_Exception_Exec(Me.exec_path)
+                If cfg.obfs_level = 3 Then add_firewall = add_firewall Or firewall.Check_Exception_Exec(cfg.pt_exec)
+                If add_firewall Then
+                    If MsgBox("Required Windows Firewall Exceptions not found, adding now? Require Administrator privillege.", vbYesNo, "Adding Exceptions") = vbYes Then
+                        firewall.Run_Add()
+                    End If
+                End If
             Else
                 MsgBox("Executable not found, resetting config.", vbExclamation, "Executable Not Found")
                 show_form2()
@@ -156,9 +165,6 @@ Public Class Form1
             End Try
             Process1.Dispose()
             Process1 = Nothing
-            RichTextBox1.AppendText(vbCrLf + "Execution Terminated" + vbCrLf)
-            ToolStripStatusLabel1.Text = "Using executable: " + Me.exec_path
-            ToolStripStatusLabel2.Text = "Not running"
         End If
     End Sub
 
@@ -166,17 +172,30 @@ Public Class Form1
         Try
             RichTextBox1.AppendText(e.Data + vbCrLf)
             RichTextBox1.ScrollToCaret()
-            'End If
+            If Not Me.proxy_set Then
+                If e.Data.Contains("Listening to local services at ") Then
+                    Dim temp As String()
+                    Dim sub1, sub2 As String
+                    temp = e.Data.Split(":")
+                    sub1 = temp(3).Split(" ").Last()
+                    sub2 = temp(4).Split(" ").First().Trim(".")
+                    ProxyConfig.SetProxy(sub1, CUInt(sub2))
+                    Me.proxy_set = True
+                End If
+            End If
         Catch
 
         End Try
+        
     End Sub
 
-    Private Sub Process1_Exited(sender As Object, e As DataReceivedEventArgs)
+    Private Sub Process1_Exited(sender As Object, e As EventArgs)
         RichTextBox1.AppendText(vbCrLf + "Execution Terminated" + vbCrLf)
         RichTextBox1.ScrollToCaret()
         ToolStripStatusLabel1.Text = "Using executable: " + Me.exec_path
         ToolStripStatusLabel2.Text = "Not running"
+        ProxyConfig.DisableProxy()
+        Me.proxy_set = False
     End Sub
 
     Private Sub killtree(myId As Integer)
